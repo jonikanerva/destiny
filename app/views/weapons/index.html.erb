@@ -1,5 +1,5 @@
 <%= form_tag weapons_index_path, method: :get do %>
-  <%= select_tag :type, weapon_type_options(params[:type]) %>
+  <%= select_tag :type, weapon_type_options(params[:type]), onchange: 'submit();' %>
   <%= submit_tag 'Search' %>
 <% end %>
 

@@ -36,6 +36,7 @@ module WeaponsHelper
     params = {
       order: sort_order(name),
       sort: name,
+      type: type_select,
     }
 
     link_to column_name, params, class: 'sort-link'
@@ -46,6 +47,14 @@ module WeaponsHelper
       :asc
     else
       :desc
+    end
+  end
+
+  def type_select
+    if params && params[:type]
+      params[:type]
+    else
+      'auto_rifle'
     end
   end
 end
