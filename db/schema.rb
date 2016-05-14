@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514164347) do
+ActiveRecord::Schema.define(version: 20160514184749) do
 
   create_table "items", force: :cascade do |t|
     t.integer  "item_hash",      limit: 8
@@ -38,13 +38,15 @@ ActiveRecord::Schema.define(version: 20160514164347) do
   add_index "stats", ["stat_hash"], name: "index_stats_on_stat_hash", using: :btree
 
   create_table "values", force: :cascade do |t|
-    t.integer  "item_id",       limit: 4
-    t.integer  "stat_hash",     limit: 8
-    t.integer  "value",         limit: 4
-    t.integer  "minimum_value", limit: 4
-    t.integer  "maximum_value", limit: 4
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "item_id",          limit: 4
+    t.integer  "stat_hash",        limit: 8
+    t.integer  "value",            limit: 4
+    t.integer  "minimum_value",    limit: 4
+    t.integer  "maximum_value",    limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "stat_name",        limit: 255
+    t.text     "stat_description", limit: 65535
   end
 
   add_index "values", ["item_id"], name: "index_values_on_item_id", using: :btree
