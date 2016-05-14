@@ -1,9 +1,38 @@
 class WeaponsController < ApplicationController
   def index
-    @weapons = Weapon.all.order(sort_order)
+    @weapons = weapon_types.order(sort_order)
   end
 
   private
+
+    def weapon_types
+      weapons = Weapon.all
+
+      type = case params[:type]
+      when 'auto_rifle'
+        weapons.auto_rifles
+      when 'hand_cannon'
+        weapons.hand_cannons
+      when 'pulse_rifle'
+        weapons.pulse_rifles
+      when 'scout_rifle'
+        weapons.scout_rifles
+      when 'fusion_rifle'
+        weapons.fusion_rifles
+      when 'shotgun'
+        weapons.shotguns
+      when 'sidearm'
+        weapons.sidearms
+      when 'sniper_rifle'
+        weapons.sniper_rifles
+      when 'machine_gun'
+        weapons.machine_guns
+      when 'rocket_launcher'
+        weapons.rocket_launchers
+      else
+        weapons.auto_rifles
+      end
+    end
 
     def sort_order
       field = case params[:sort]
