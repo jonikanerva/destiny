@@ -16,8 +16,11 @@ ActiveRecord::Schema.define(version: 20160514134601) do
   create_table "stats", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.string   "description", limit: 255
+    t.integer  "stat_id",     limit: 8
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
+
+  add_index "stats", ["stat_id"], name: "index_stats_on_stat_id", using: :btree
 
 end
