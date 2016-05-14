@@ -7,7 +7,6 @@ class CreateWeapons < ActiveRecord::Migration
       t.string :category
       t.string :tier
       t.string :icon
-      t.integer :item_hash
       t.integer :attack
       t.integer :optics
       t.integer :rate_of_fire

@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20160514203244) do
   add_index "values", ["stat_hash"], name: "index_values_on_stat_hash", using: :btree
 
   create_table "weapons", force: :cascade do |t|
-    t.integer  "item_hash",        limit: 4
+    t.integer  "item_hash",        limit: 8
     t.string   "name",             limit: 255
     t.text     "description",      limit: 65535
     t.string   "category",         limit: 255
