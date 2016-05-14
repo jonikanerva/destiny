@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+hawkmoon:
+  name: Hawkmoon
+  description: Beep boop
+  category: Hand Cannon
+  tier: Exotic
+  icon: icon.jog
+  item_hash: 1
+  attack: 300
+  optics: 1
+  rate_of_fire: 1
+  impact: 1
+  range: 1
+  stability: 1
+  magazine: 1
+  reload_speed: 1
+  inventory_size: 1
+  equip_speed: 1
+  aim_assistance: 1
+  recoil_direction: 1

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514164347) do
+ActiveRecord::Schema.define(version: 20160514203244) do
 
   create_table "items", force: :cascade do |t|
     t.integer  "item_hash",      limit: 8
@@ -49,6 +49,29 @@ ActiveRecord::Schema.define(version: 20160514164347) do
 
   add_index "values", ["item_id"], name: "index_values_on_item_id", using: :btree
   add_index "values", ["stat_hash"], name: "index_values_on_stat_hash", using: :btree
+
+  create_table "weapons", force: :cascade do |t|
+    t.integer  "item_hash",        limit: 4
+    t.string   "name",             limit: 255
+    t.text     "description",      limit: 65535
+    t.string   "category",         limit: 255
+    t.string   "tier",             limit: 255
+    t.string   "icon",             limit: 255
+    t.integer  "attack",           limit: 4
+    t.integer  "optics",           limit: 4
+    t.integer  "rate_of_fire",     limit: 4
+    t.integer  "impact",           limit: 4
+    t.integer  "range",            limit: 4
+    t.integer  "stability",        limit: 4
+    t.integer  "magazine",         limit: 4
+    t.integer  "reload_speed",     limit: 4
+    t.integer  "inventory_size",   limit: 4
+    t.integer  "equip_speed",      limit: 4
+    t.integer  "aim_assistance",   limit: 4
+    t.integer  "recoil_direction", limit: 4
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
   add_foreign_key "values", "items"
 end
