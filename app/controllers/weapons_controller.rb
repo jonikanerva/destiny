@@ -42,7 +42,7 @@ class WeaponsController < ApplicationController
     when 'recoil'
       :recoil_direction
     else
-      :item_type_name
+      :category
     end
 
   end
