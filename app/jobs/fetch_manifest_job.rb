@@ -50,11 +50,19 @@ class FetchManifestJob < ActiveJob::Base
         # loop item stat values
         json["stats"].each do |v|
           hash = v.last
+
+          # try to find the stat, so we can add name/desc to this table as well
+          stat = Stat.find_by stat_hash: hash["statHash"]
+
+          puts "Stattia '#{hash["statHash"]}' ei löytynyt" if stat.nil?
+
           value = item.values.find_or_initialize_by stat_hash: hash["statHash"]
-          value.stat_hash     = hash["statHash"]
-          value.value         = hash["value"]
-          value.minimum_value = hash["minimum"]
-          value.maximum_value = hash["maximum"]
+          value.stat_hash        = hash["statHash"]
+          value.stat_name        = stat.try(:name)
+          value.stat_description = stat.try(:description)
+          value.value            = hash["value"]
+          value.minimum_value    = hash["minimum"]
+          value.maximum_value    = hash["maximum"]
           value.save!
         end
       end
