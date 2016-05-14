@@ -1,11 +1,24 @@
 class FetchManifestJob < ActiveJob::Base
   queue_as :default
 
-  def perform(*args)
-    db_file = "/Users/joni/Desktop/world_sql_content_05feb511d99733ad8d1bbe60465007c1.content"
+  def perform(database_file)
+    @database_file = database_file
 
-    SQLite3::Database.new(db_file) do |db|
+    raise "Invalid database" unless File.exist?(@database_file)
+
+    update_stats
+    update_items_and_values
+  end
+
+  private
+
+    def db
+      @db ||= SQLite3::Database.new(@database_file)
+    end
+
+    def update_stats
       puts "Updating stats"
+
       db.execute("select * from DestinyStatDefinition") do |row|
         json = JSON.parse row.second
 
@@ -15,8 +28,11 @@ class FetchManifestJob < ActiveJob::Base
         stat.description = json["statDescription"]
         stat.save!
       end
+    end
 
+    def update_items_and_values
       puts "Updating items"
+
       db.execute("select * from DestinyInventoryItemDefinition") do |row|
 
         json = JSON.parse row.second
@@ -43,5 +59,4 @@ class FetchManifestJob < ActiveJob::Base
         end
       end
     end
-  end
 end
