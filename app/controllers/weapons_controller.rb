@@ -40,8 +40,6 @@ class WeaponsController < ApplicationController
         :name
       when 'description'
         :description
-      when 'type'
-        :category
       when 'tier'
         :tier
       when 'icon'
