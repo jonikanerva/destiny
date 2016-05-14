@@ -13,6 +13,7 @@ gem 'dotenv-rails'
 gem 'puma'
 gem 'rack-timeout'
 gem 'redis'
+gem 'redis-rails'
 
 group :production do
   gem 'pg'
