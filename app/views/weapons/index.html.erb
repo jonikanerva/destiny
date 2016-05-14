@@ -4,99 +4,103 @@
   <%= submit_tag 'Search', class: 'hide' %>
 <% end %>
 
-<table class='center'>
-  <tr>
-    <th class='name'>
-      <%= sort_link 'Name' %>
-    </th>
+<% cache ['v1', 'weapons', cache_key_for_weapons, params] do %>
 
-    <th>
-      <%= sort_link 'Tier' %>
-    </th>
+  <table class='center'>
+    <tr>
+      <th class='name'>
+        <%= sort_link 'Name' %>
+      </th>
 
-    <th class='stat'>
-      <%= sort_link 'Attack' %>
-    </th>
+      <th>
+        <%= sort_link 'Tier' %>
+      </th>
 
-    <th class='stat'>
-      <%= sort_link 'Impact' %>
-    </th>
+      <th class='stat'>
+        <%= sort_link 'Attack' %>
+      </th>
 
-    <th class='stat'>
-      <%= sort_link 'Range' %>
-    </th>
+      <th class='stat'>
+        <%= sort_link 'Impact' %>
+      </th>
 
-    <th class='stat'>
-      <%= sort_link 'Stability' %>
-    </th>
+      <th class='stat'>
+        <%= sort_link 'Range' %>
+      </th>
 
-    <th class='stat'>
-      <%= sort_link 'ROF' %>
-    </th>
+      <th class='stat'>
+        <%= sort_link 'Stability' %>
+      </th>
 
-    <th class='stat'>
-      <%= sort_link 'AA' %>
-    </th>
+      <th class='stat'>
+        <%= sort_link 'ROF' %>
+      </th>
 
-    <th class='stat'>
-      <%= sort_link 'Mag' %>
-    </th>
+      <th class='stat'>
+        <%= sort_link 'AA' %>
+      </th>
 
-    <th class='stat'>
-      <%= sort_link 'Reload' %>
-    </th>
+      <th class='stat'>
+        <%= sort_link 'Mag' %>
+      </th>
 
-    <th class='stat'>
-      <%= sort_link 'Equip' %>
-    </th>
-  </tr>
+      <th class='stat'>
+        <%= sort_link 'Reload' %>
+      </th>
 
-
-  <% @weapons.each do |weapon| %>
-    <tr class="<%= cycle("odd", "even") %>">
-      <td>
-        <%= armory_link weapon.name, weapon.item_hash %>
-      </td>
-
-      <td>
-        <%= weapon.tier %>
-      </td>
-
-      <td class='stat'>
-        <%= weapon.attack %>
-      </td>
-
-      <td class='stat'>
-        <%= weapon.impact %>
-      </td>
-
-      <td class='stat'>
-        <%= weapon.range %>
-      </td>
-
-      <td class='stat'>
-        <%= weapon.stability %>
-      </td>
-
-      <td class='stat'>
-        <%= weapon.rate_of_fire %>
-      </td>
-
-      <td class='stat'>
-        <%= weapon.aim_assistance %>
-      </td>
-
-      <td class='stat'>
-        <%= weapon.magazine %>
-      </td>
-
-      <td class='stat'>
-        <%= weapon.reload_speed %>
-      </td>
-
-      <td class='stat'>
-        <%= weapon.equip_speed %>
-      </td>
+      <th class='stat'>
+        <%= sort_link 'Equip' %>
+      </th>
     </tr>
-  <% end %>
-</table>
+
+
+    <% @weapons.each do |weapon| %>
+      <tr class="<%= cycle("odd", "even") %>">
+        <td>
+          <%= armory_link weapon.name, weapon.item_hash %>
+        </td>
+
+        <td>
+          <%= weapon.tier %>
+        </td>
+
+        <td class='stat'>
+          <%= weapon.attack %>
+        </td>
+
+        <td class='stat'>
+          <%= weapon.impact %>
+        </td>
+
+        <td class='stat'>
+          <%= weapon.range %>
+        </td>
+
+        <td class='stat'>
+          <%= weapon.stability %>
+        </td>
+
+        <td class='stat'>
+          <%= weapon.rate_of_fire %>
+        </td>
+
+        <td class='stat'>
+          <%= weapon.aim_assistance %>
+        </td>
+
+        <td class='stat'>
+          <%= weapon.magazine %>
+        </td>
+
+        <td class='stat'>
+          <%= weapon.reload_speed %>
+        </td>
+
+        <td class='stat'>
+          <%= weapon.equip_speed %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+<% end %>

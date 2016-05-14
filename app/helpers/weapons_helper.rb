@@ -57,4 +57,11 @@ module WeaponsHelper
       'auto_rifle'
     end
   end
+
+  def cache_key_for_weapons
+    count = Weapon.count
+    max = Weapon.maximum(:updated_at).try(:utc).try(:to_s, :number)
+
+    "all-#{count}-#{max}"
+  end
 end
