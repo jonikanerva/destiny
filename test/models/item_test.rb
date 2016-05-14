@@ -13,5 +13,7 @@ class ItemTest < ActiveSupport::TestCase
     assert_equal 2, @luck.values.count
     assert_equal 39, @luck.values.first.value
     assert_equal 115, @luck.values.second.maximum_value
+    assert_equal "Aim assistance", @luck.stats.first.name
+    assert_equal "Discipline", @luck.values.first.stat.name
   end
 end
