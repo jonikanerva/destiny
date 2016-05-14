@@ -1,0 +1,10 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+luck:
+  item_hash: 1
+  name: Hard Luck Mk. 52
+  description: Marked with spades.
+  icon: icon.jpg
+  tier_type: 4
+  tier_type_name: Rare
+  item_type_name: Hand Cannon
