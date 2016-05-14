@@ -1,6 +1,6 @@
 class WeaponsController < ApplicationController
   def index
-    @weapons = Item.weapons.includes(:values).order(sort_order)
+    @weapons = Weapon.all.order(sort_order)
   end
 
   private
@@ -9,12 +9,41 @@ class WeaponsController < ApplicationController
     case params[:sort]
     when 'name'
       :name
-    when 'tier'
-      :tier_type_name
+    when 'description'
+      :description
     when 'type'
-      :item_type_name
+      :category
+    when 'tier'
+      :tier
+    when 'icon'
+      :icon
+    when 'attack'
+      :attack
+    when 'optics'
+      :optics
+    when 'rof'
+      :rate_of_fire
+    when 'impact'
+      :impact
+    when 'range'
+      :range
+    when 'stability'
+      :stability
+    when 'mag'
+      :magazine
+    when 'reload'
+      :reload_speed
+    when 'inventory'
+      :inventory_size
+    when 'equip'
+      :equip_speed
+    when 'aa'
+      :aim_assistance
+    when 'recoil'
+      :recoil_direction
     else
       :item_type_name
     end
+
   end
 end
