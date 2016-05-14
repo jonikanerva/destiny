@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stat_hash: 1
+  value: 105
+  minimum_value: 80
+  maximum_value: 115
+
+two:
+  stat_hash: 2
+  value: 39
+  minimum_value: 39
+  maximum_value: 45
