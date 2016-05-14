@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514161039) do
+ActiveRecord::Schema.define(version: 20160514162917) do
+
+  create_table "attributes", force: :cascade do |t|
+    t.integer  "stat_hash",     limit: 8
+    t.integer  "value",         limit: 4
+    t.integer  "minimum_value", limit: 4
+    t.integer  "maximum_value", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "attributes", ["stat_hash"], name: "index_attributes_on_stat_hash", using: :btree
 
   create_table "items", force: :cascade do |t|
     t.integer  "item_hash",      limit: 8
