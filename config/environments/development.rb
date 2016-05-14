@@ -13,6 +13,9 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
+  # test productions caching in development, uncomment this
+  # config.cache_store = :redis_store, "#{Rails.application.secrets.redis_server_url}/0/cache", { expires_in: 1.month }
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
