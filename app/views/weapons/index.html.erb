@@ -19,19 +19,7 @@
     </th>
 
     <th class='stat'>
-      <%= sort_link 'AA' %>
-    </th>
-
-    <th class='stat'>
-      <%= sort_link 'Equip' %>
-    </th>
-
-    <th class='stat'>
       <%= sort_link 'Impact' %>
-    </th>
-
-    <th class='stat'>
-      <%= sort_link 'Mag' %>
     </th>
 
     <th class='stat'>
@@ -39,7 +27,19 @@
     </th>
 
     <th class='stat'>
+      <%= sort_link 'Stability' %>
+    </th>
+
+    <th class='stat'>
       <%= sort_link 'ROF' %>
+    </th>
+
+    <th class='stat'>
+      <%= sort_link 'AA' %>
+    </th>
+
+    <th class='stat'>
+      <%= sort_link 'Mag' %>
     </th>
 
     <th class='stat'>
@@ -47,7 +47,7 @@
     </th>
 
     <th class='stat'>
-      <%= sort_link 'Stability' %>
+      <%= sort_link 'Equip' %>
     </th>
   </tr>
 
@@ -67,19 +67,7 @@
       </td>
 
       <td class='stat'>
-        <%= weapon.aim_assistance %>
-      </td>
-
-      <td class='stat'>
-        <%= weapon.equip_speed %>
-      </td>
-
-      <td class='stat'>
         <%= weapon.impact %>
-      </td>
-
-      <td class='stat'>
-        <%= weapon.magazine %>
       </td>
 
       <td class='stat'>
@@ -87,7 +75,19 @@
       </td>
 
       <td class='stat'>
+        <%= weapon.stability %>
+      </td>
+
+      <td class='stat'>
         <%= weapon.rate_of_fire %>
+      </td>
+
+      <td class='stat'>
+        <%= weapon.aim_assistance %>
+      </td>
+
+      <td class='stat'>
+        <%= weapon.magazine %>
       </td>
 
       <td class='stat'>
@@ -95,7 +95,7 @@
       </td>
 
       <td class='stat'>
-        <%= weapon.stability %>
+        <%= weapon.equip_speed %>
       </td>
     </tr>
   <% end %>
