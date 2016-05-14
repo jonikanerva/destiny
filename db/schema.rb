@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 20160514161039) do
   create_table "items", force: :cascade do |t|
     t.integer  "item_id",        limit: 8
     t.string   "name",           limit: 255
-    t.string   "description",    limit: 255
+    t.text     "description",    limit: 65535
     t.string   "icon",           limit: 255
-    t.string   "type_name",      limit: 255
     t.integer  "tier_type",      limit: 4
+    t.string   "tier_type_name", limit: 255
     t.string   "item_type_name", limit: 255
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_index "items", ["item_id"], name: "index_items_on_item_id", using: :btree
