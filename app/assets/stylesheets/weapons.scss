@@ -1,0 +1,35 @@
+// Place all the styles related to the weapons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+  font-family: -apple-system, Helvetica, Tahoma, Verdana, sans-serif;
+  font-size: 15pt;
+}
+
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+tr:hover {
+  background-color: #fdd;
+}
+
+td, th {
+  padding: 5px;
+  text-align: left;
+}
+
+td.stat, th.stat {
+  width: 50px;
+  text-align: right;
+}
+
+.even {
+  background-color: #fff;
+}
+
+.odd {
+  background-color: #ddd;
+}

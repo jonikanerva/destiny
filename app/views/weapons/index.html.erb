@@ -1,0 +1,104 @@
+<table class='center'>
+  <tr>
+    <th>
+      Name
+    </th>
+
+    <th>
+      Tier
+    </th>
+
+    <th>
+      Type
+    </th>
+
+    <th class='stat'>
+      Attack
+    </th>
+
+    <th class='stat'>
+      AA
+    </th>
+
+    <th class='stat'>
+      Equip
+    </th>
+
+    <th class='stat'>
+      Impact
+    </th>
+
+    <th class='stat'>
+      Mag
+    </th>
+
+    <th class='stat'>
+      Range
+    </th>
+
+    <th class='stat'>
+      ROF
+    </th>
+
+    <th class='stat'>
+      Reload
+    </th>
+
+    <th class='stat'>
+      Stability
+    </th>
+  </tr>
+
+
+  <% @weapons.each do |weapon| %>
+    <tr class="<%= cycle("odd", "even") %>">
+      <td>
+        <%= weapon.name %>
+      </td>
+
+      <td>
+        <%= weapon.tier_type_name %>
+      </td>
+
+      <td>
+        <%= weapon.item_type_name %>
+      </td>
+
+      <td class='stat'>
+        <%= weapon.attack %>
+      </td>
+
+      <td class='stat'>
+        <%= weapon.aim_assistance %>
+      </td>
+
+      <td class='stat'>
+        <%= weapon.equip_speed %>
+      </td>
+
+      <td class='stat'>
+        <%= weapon.impact %>
+      </td>
+
+      <td class='stat'>
+        <%= weapon.magazine %>
+      </td>
+
+      <td class='stat'>
+        <%= weapon.range %>
+      </td>
+
+      <td class='stat'>
+        <%= weapon.rate_of_fire %>
+      </td>
+
+      <td class='stat'>
+        <%= weapon.reload %>
+      </td>
+
+      <td class='stat'>
+        <%= weapon.stability %>
+      </td>
+    </tr>
+  <% end %>
+</table>
