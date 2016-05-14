@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20160514161039) do
 
   create_table "items", force: :cascade do |t|
-    t.integer  "item_id",        limit: 8
+    t.integer  "item_hash",      limit: 8
     t.string   "name",           limit: 255
     t.text     "description",    limit: 65535
     t.string   "icon",           limit: 255
@@ -25,16 +25,16 @@ ActiveRecord::Schema.define(version: 20160514161039) do
     t.datetime "updated_at",                   null: false
   end
 
-  add_index "items", ["item_id"], name: "index_items_on_item_id", using: :btree
+  add_index "items", ["item_hash"], name: "index_items_on_item_hash", using: :btree
 
   create_table "stats", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.string   "description", limit: 255
-    t.integer  "stat_id",     limit: 8
+    t.integer  "stat_hash",   limit: 8
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
 
-  add_index "stats", ["stat_id"], name: "index_stats_on_stat_id", using: :btree
+  add_index "stats", ["stat_hash"], name: "index_stats_on_stat_hash", using: :btree
 
 end

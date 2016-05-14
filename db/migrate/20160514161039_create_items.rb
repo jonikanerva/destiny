@@ -1,7 +1,7 @@
 class CreateItems < ActiveRecord::Migration
   def change
     create_table :items do |t|
-      t.integer :item_id, limit: 8, index: true
+      t.integer :item_hash, limit: 8, index: true
       t.string  :name
       t.text    :description
       t.string  :icon
