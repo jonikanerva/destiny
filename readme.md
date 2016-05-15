@@ -18,3 +18,7 @@ delete heroku database
 upload dev database to heroku
 
     heroku pg:push destiny_dev DATABASE_URL
+
+delete unneccessary row (to fit hobby plan)
+
+    heroku run rails runner "DeleteItemsJob.perform_now"
