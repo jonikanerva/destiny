@@ -68,11 +68,17 @@ class WeaponsController < ApplicationController
         :aim_assistance
       when 'recoil'
         :recoil_direction
+      when 'charge'
+        :charge_rate
+      when 'velo'
+        :velocity
+      when 'blast'
+        :blast_radius
       else
         :tier_number
       end
 
-      "#{field} #{sort_direction}"
+      "#{field} #{sort_direction}, aim_assistance desc"
     end
 
     def sort_direction
