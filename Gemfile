@@ -11,7 +11,7 @@ gem 'turbolinks'
 gem 'dotenv-rails'
 
 gem 'puma'
-gem 'redis-rails'
+gem 'dalli'
 
 group :production do
   gem 'pg'
