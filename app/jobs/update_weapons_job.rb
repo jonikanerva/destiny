@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class UpdateWeaponsJob < ActiveJob::Base
   queue_as :default
 
@@ -35,6 +37,9 @@ class UpdateWeaponsJob < ActiveJob::Base
 
     # Attack zero means weapon is "removed"
     Weapon.where(attack: 0).delete_all
+
+    # Download images to assets
+    download_images
   end
 
   private
@@ -50,5 +55,19 @@ class UpdateWeaponsJob < ActiveJob::Base
       array = @stat_hash.dup
 
       array.keep_if { |w| w.second == name }.flatten.first
+    end
+
+    def download_images
+      asset_dir = Rails.root.join 'app', 'assets', 'images', 'weapons'
+
+      Weapon.find_each do |weapon|
+        url  = "https://www.bungie.net#{weapon.icon}"
+        file = "#{asset_dir}/#{File.basename(weapon.icon)}"
+
+        next if File.exist?(file)
+
+        # write file
+        open(file, 'wb') { |f| f << open(url).read }
+      end
     end
 end
