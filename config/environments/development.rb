@@ -15,6 +15,7 @@ Rails.application.configure do
 
   # test productions caching in development, uncomment this
   # redis_url = "#{Rails.application.secrets.redis_server_url}/0/cache"
+  # config.action_controller.perform_caching = true
   # config.cache_store = :redis_store, redis_url
 
   # Don't care if the mailer can't send.
