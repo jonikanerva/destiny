@@ -70,4 +70,8 @@ module WeaponsHelper
 
     "#{stat.name} - #{stat.description}"
   end
+
+  def weapon_image(weapon)
+    image_tag "weapons/#{File.basename(weapon.icon)}", size: "45"
+  end
 end
