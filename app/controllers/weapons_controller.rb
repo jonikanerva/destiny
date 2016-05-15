@@ -54,7 +54,7 @@ class WeaponsController < ApplicationController
         :impact
       when 'range'
         'weapons.range'
-      when 'stability'
+      when 'stab'
         :stability
       when 'mag'
         :magazine
@@ -69,7 +69,7 @@ class WeaponsController < ApplicationController
       when 'recoil'
         :recoil_direction
       else
-        :attack
+        :tier_number
       end
 
       "#{field} #{sort_direction}"

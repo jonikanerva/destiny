@@ -12,7 +12,7 @@
         <%= sort_link 'Name' %>
       </th>
 
-      <th>
+      <th class='tier'>
         <%= sort_link 'Tier' %>
       </th>
 
@@ -29,7 +29,7 @@
       </th>
 
       <th class='stat'>
-        <%= sort_link 'Stability' %>
+        <%= sort_link 'Stab' %>
       </th>
 
       <th class='stat'>
@@ -56,12 +56,12 @@
 
     <% @weapons.each do |weapon| %>
       <tr class="active <%= cycle("odd", "even") %>">
-        <td>
+        <td class='name'>
           <%= armory_link weapon.name, weapon.item_hash %>
         </td>
 
-        <td>
-          <%= weapon.tier %>
+        <td class="tier <%= weapon.tier %>">
+          <%= weapon.tier.first %>
         </td>
 
         <td class='stat'>

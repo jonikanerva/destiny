@@ -32,21 +32,24 @@ table.center {
 }
 
 tr.active:hover {
-  background-color: #fdd;
+  background-color: #ddf;
 }
 
 td, th {
   padding: 5px;
-  text-align: left;
-  width: 150px;
 }
 
 td.name, th.name {
-  width: 350px;
+  text-align: left;
+}
+
+td.tier, th.tier {
+  width: 45px;
+  text-align: center;
 }
 
 td.stat, th.stat {
-  width: 50px;
+  min-width: 70px;
   text-align: right;
 }
 
@@ -60,4 +63,27 @@ td.stat, th.stat {
 
 .hide {
   display: none;
+}
+
+.Uncommon {
+  background-color: #5cb370;
+}
+
+.Exotic {
+  background-color: #fdd944;
+}
+
+.Common {
+  background-color: #ddd6cd;
+}
+
+.Basic {
+}
+
+.Legendary {
+  background-color: #a465ca;
+}
+
+.Rare {
+  background-color: #6a9bd4;
 }
