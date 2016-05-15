@@ -24,10 +24,10 @@ module WeaponsHelper
     grouped_options_for_select options, selected
   end
 
-  def armory_link(name, item_id)
-    link = "https://www.bungie.net/en/Armory/Detail?item=#{item_id}"
+  def armory_link(weapon)
+    link = "https://www.bungie.net/en/Armory/Detail?item=#{weapon.item_hash}"
 
-    link_to name, link, class: 'armory-link'
+    link_to weapon.name, link, class: 'armory-link', title: weapon.description
   end
 
   def sort_link(column_name, tooltip = '')
