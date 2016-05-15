@@ -41,7 +41,7 @@ class WeaponsController < ApplicationController
       when 'description'
         :description
       when 'tier'
-        :tier
+        :tier_number
       when 'icon'
         :icon
       when 'attack'
