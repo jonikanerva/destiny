@@ -11,6 +11,7 @@ class UpdateWeaponsJob < ActiveJob::Base
         description:      item.description,
         category:         item.item_type_name,
         tier:             item.tier_type_name,
+        tier_number:      item.tier_type,
         icon:             item.icon,
         attack:           value_by_name(item, 'Attack'),
         optics:           value_by_name(item, 'Optics'),
