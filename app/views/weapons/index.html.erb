@@ -4,7 +4,7 @@
   <%= submit_tag 'Search', class: 'hide' %>
 <% end %>
 
-<% cache ['v1', 'weapons', cache_key_for_weapons, params] do %>
+<% cache ['v1', cache_key_for_weapons, params] do %>
 
   <table class='center'>
     <tr>
@@ -78,7 +78,7 @@
         </td>
 
         <td class="tier <%= weapon.tier %>">
-          <%= weapon.tier.first %>
+          <%= link_to weapon.tier.first, weapon_image(weapon) %>
         </td>
 
         <td class='stat'>

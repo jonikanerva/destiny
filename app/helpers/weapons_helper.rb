@@ -60,9 +60,9 @@ module WeaponsHelper
 
   def cache_key_for_weapons
     count = Weapon.count
-    max = Weapon.maximum(:updated_at).try(:utc).try(:to_s, :number)
+    max   = Weapon.maximum(:updated_at).try(:utc).try(:to_s, :number)
 
-    "all-#{count}-#{max}"
+    "weapons/all-#{count}-#{max}"
   end
 
   def stat_description(stat)
@@ -72,6 +72,6 @@ module WeaponsHelper
   end
 
   def weapon_image(weapon)
-    image_tag "weapons/#{File.basename(weapon.icon)}", size: "45"
+    image_path "weapons/#{File.basename(weapon.icon)}"
   end
 end
