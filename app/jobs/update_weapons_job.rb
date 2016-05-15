@@ -13,25 +13,28 @@ class UpdateWeaponsJob < ActiveJob::Base
         tier:             item.tier_type_name,
         tier_number:      item.tier_type,
         icon:             item.icon,
-        attack:           value_by_name(item, 'Attack'),
-        optics:           value_by_name(item, 'Optics'),
-        rate_of_fire:     value_by_name(item, 'Rate of Fire'),
-        charge_rate:      value_by_name(item, 'Charge Rate'),
-        velocity:         value_by_name(item, 'Velocity'),
-        blast_radius:     value_by_name(item, 'Blast Radius'),
-        impact:           value_by_name(item, 'Impact'),
-        range:            value_by_name(item, 'Range'),
-        stability:        value_by_name(item, 'Stability'),
-        magazine:         value_by_name(item, 'Magazine'),
-        reload_speed:     value_by_name(item, 'Reload'),
-        inventory_size:   value_by_name(item, 'Inventory Size'),
-        equip_speed:      value_by_name(item, 'Equip Speed'),
-        aim_assistance:   value_by_name(item, 'Aim assistance'),
-        recoil_direction: value_by_name(item, 'Recoil direction'),
+        attack:           value_by_name(item, 'Attack').try(:maximum_value),
+        optics:           value_by_name(item, 'Optics').try(:value),
+        rate_of_fire:     value_by_name(item, 'Rate of Fire').try(:value),
+        charge_rate:      value_by_name(item, 'Charge Rate').try(:value),
+        velocity:         value_by_name(item, 'Velocity').try(:value),
+        blast_radius:     value_by_name(item, 'Blast Radius').try(:value),
+        impact:           value_by_name(item, 'Impact').try(:value),
+        range:            value_by_name(item, 'Range').try(:value),
+        stability:        value_by_name(item, 'Stability').try(:value),
+        magazine:         value_by_name(item, 'Magazine').try(:value),
+        reload_speed:     value_by_name(item, 'Reload').try(:value),
+        inventory_size:   value_by_name(item, 'Inventory Size').try(:value),
+        equip_speed:      value_by_name(item, 'Equip Speed').try(:value),
+        aim_assistance:   value_by_name(item, 'Aim assistance').try(:value),
+        recoil_direction: value_by_name(item, 'Recoil direction').try(:value),
       }
 
       weapon.update! params
     end
+
+    # Attack zero means weapon is "removed"
+    Weapon.where(attack: 0).delete_all
   end
 
   private
@@ -39,7 +42,7 @@ class UpdateWeaponsJob < ActiveJob::Base
     def value_by_name(item, name)
       value_array = item.values.to_a
 
-      value_array.keep_if { |w| w.stat_hash == stat_hash(name) }.first.try(:value)
+      value_array.keep_if { |w| w.stat_hash == stat_hash(name) }.first
     end
 
     def stat_hash(name)
