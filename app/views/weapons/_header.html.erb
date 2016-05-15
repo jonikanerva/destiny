@@ -1,0 +1,63 @@
+<tr>
+  <th class='name'>
+    <%= sort_link 'Name' %>
+  </th>
+
+  <th class='tier'>
+    <%= sort_link 'Tier' %>
+  </th>
+
+  <th class='stat'>
+    <%= sort_link 'Attack', stat_description('Attack') %>
+  </th>
+
+  <%# Rocket launchers have velocity and blast radius, others impact and range %>
+  <% if params[:type] == 'rocket_launcher' %>
+    <th class='stat'>
+      <%= sort_link 'Velo', stat_description('Velocity') %>
+    </th>
+
+    <th class='stat'>
+      <%= sort_link 'Blast', stat_description('Blast Radius') %>
+    </th>
+  <% else %>
+    <th class='stat'>
+      <%= sort_link 'Impact', stat_description('Impact') %>
+    </th>
+
+    <th class='stat'>
+      <%= sort_link 'Range', stat_description('Range') %>
+    </th>
+  <% end %>
+
+  <th class='stat'>
+    <%= sort_link 'Stab', stat_description('Stability') %>
+  </th>
+
+  <%# Fusion rifles have charge rate, others rate of fire %>
+  <% if params[:type] == 'fusion_rifle' %>
+    <th class='stat'>
+      <%= sort_link 'Charge', stat_description('Charge Rate') %>
+    </th>
+  <% else %>
+    <th class='stat'>
+      <%= sort_link 'ROF', stat_description('Rate of Fire') %>
+    </th>
+  <% end %>
+
+  <th class='stat'>
+    <%= sort_link 'AA', stat_description('Aim assistance') %>
+  </th>
+
+  <th class='stat'>
+    <%= sort_link 'Mag', stat_description('Magazine') %>
+  </th>
+
+  <th class='stat'>
+    <%= sort_link 'Reload', stat_description('Reload') %>
+  </th>
+
+  <th class='stat'>
+    <%= sort_link 'Equip', stat_description('Equip Speed') %>
+  </th>
+</tr>
