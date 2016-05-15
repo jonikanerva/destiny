@@ -55,7 +55,7 @@
 
 
     <% @weapons.each do |weapon| %>
-      <tr class="<%= cycle("odd", "even") %>">
+      <tr class="active <%= cycle("odd", "even") %>">
         <td>
           <%= armory_link weapon.name, weapon.item_hash %>
         </td>
