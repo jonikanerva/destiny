@@ -66,6 +66,8 @@ module WeaponsHelper
   end
 
   def stat_description(stat)
-    Stat.find_by(name: stat).description
+    stat = Stat.find_by(name: stat)
+
+    "#{stat.name} - #{stat.description}"
   end
 end
