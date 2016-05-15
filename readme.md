@@ -13,7 +13,7 @@ fetch newest database and
 
 delete heroku database
 
-    heroku pg:reset DATABASE_URL
+    heroku pg:reset DATABASE_URL --confirm destiny-weapons
 
 upload dev database to heroku
 
