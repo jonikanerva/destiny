@@ -1,16 +1,30 @@
-<%= form_tag weapons_index_path, method: :get do %>
-  <%= label_tag :type, 'Select weapon type' %>
-  <%= select_tag :type, weapon_type_options(params[:type]), onchange: 'submit();' %>
-  <%= submit_tag 'Search', class: 'hide' %>
-<% end %>
-
 <% cache ['v1', cache_key_for_weapons, params] do %>
-  <table class='center'>
+
+  <!-- sticky header -->
+  <div class="header">
     <%= render 'header' %>
+  </div>
 
-    <% @weapons.each do |weapon| %>
-      <%= render partial: 'row', locals: { weapon: weapon } %>
-    <% end %>
+  <!-- visible header -->
+  <div class="outer">
+    <div class="header">
+      <%= form_tag weapons_index_path, method: :get do %>
+        <%= label_tag :type, 'Select weapon type' %>
+        <%= select_tag :type, weapon_type_options(params[:type]), onchange: 'submit();' %>
+        <%= submit_tag 'Search', class: 'hide' %>
+      <% end %>
 
-  </table>
+      <%= render 'header' %>
+    </div>
+  </div>
+
+  <!-- data -->
+  <div class="content">
+    <table class='center'>
+      <% @weapons.each do |weapon| %>
+        <%= render partial: 'row', locals: { weapon: weapon } %>
+      <% end %>
+    </table>
+  </div>
+
 <% end %>
