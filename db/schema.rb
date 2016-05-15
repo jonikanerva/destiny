@@ -11,18 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160514203244) do
+ActiveRecord::Schema.define(version: 20160515075421) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
     t.integer  "item_hash",      limit: 8
     t.string   "name",           limit: 255
-    t.text     "description",    limit: 65535
+    t.text     "description"
     t.string   "icon",           limit: 255
-    t.integer  "tier_type",      limit: 4
+    t.integer  "tier_type"
     t.string   "tier_type_name", limit: 255
     t.string   "item_type_name", limit: 255
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "items", ["item_hash"], name: "index_items_on_item_hash", using: :btree
@@ -38,11 +41,11 @@ ActiveRecord::Schema.define(version: 20160514203244) do
   add_index "stats", ["stat_hash"], name: "index_stats_on_stat_hash", using: :btree
 
   create_table "values", force: :cascade do |t|
-    t.integer  "item_id",       limit: 4
+    t.integer  "item_id"
     t.integer  "stat_hash",     limit: 8
-    t.integer  "value",         limit: 4
-    t.integer  "minimum_value", limit: 4
-    t.integer  "maximum_value", limit: 4
+    t.integer  "value"
+    t.integer  "minimum_value"
+    t.integer  "maximum_value"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
@@ -53,24 +56,25 @@ ActiveRecord::Schema.define(version: 20160514203244) do
   create_table "weapons", force: :cascade do |t|
     t.integer  "item_hash",        limit: 8
     t.string   "name",             limit: 255
-    t.text     "description",      limit: 65535
+    t.text     "description"
     t.string   "category",         limit: 255
     t.string   "tier",             limit: 255
     t.string   "icon",             limit: 255
-    t.integer  "attack",           limit: 4
-    t.integer  "optics",           limit: 4
-    t.integer  "rate_of_fire",     limit: 4
-    t.integer  "impact",           limit: 4
-    t.integer  "range",            limit: 4
-    t.integer  "stability",        limit: 4
-    t.integer  "magazine",         limit: 4
-    t.integer  "reload_speed",     limit: 4
-    t.integer  "inventory_size",   limit: 4
-    t.integer  "equip_speed",      limit: 4
-    t.integer  "aim_assistance",   limit: 4
-    t.integer  "recoil_direction", limit: 4
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.integer  "attack"
+    t.integer  "optics"
+    t.integer  "rate_of_fire"
+    t.integer  "impact"
+    t.integer  "range"
+    t.integer  "stability"
+    t.integer  "magazine"
+    t.integer  "reload_speed"
+    t.integer  "inventory_size"
+    t.integer  "equip_speed"
+    t.integer  "aim_assistance"
+    t.integer  "recoil_direction"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "tier_number"
   end
 
   add_foreign_key "values", "items"
