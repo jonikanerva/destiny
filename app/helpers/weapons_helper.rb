@@ -30,7 +30,7 @@ module WeaponsHelper
     link_to name, link, class: 'armory-link'
   end
 
-  def sort_link(column_name)
+  def sort_link(column_name, tooltip = '')
     name = column_name.downcase
 
     params = {
@@ -39,7 +39,7 @@ module WeaponsHelper
       type: type_select,
     }
 
-    link_to column_name, params, class: 'sort-link'
+    link_to column_name, params, class: 'sort-link', title: tooltip
   end
 
   def sort_order(column_name)
@@ -63,5 +63,9 @@ module WeaponsHelper
     max = Weapon.maximum(:updated_at).try(:utc).try(:to_s, :number)
 
     "all-#{count}-#{max}"
+  end
+
+  def stat_description(stat)
+    Stat.find_by(name: stat).description
   end
 end
