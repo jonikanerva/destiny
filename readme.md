@@ -6,7 +6,8 @@
 
 fetch newest database and
 
-    rails runner "FetchManifestJob.perform_now('/tmp/new.db')"
+    rails runner "FetchManifestJob.perform_now"
+    rails runner "ProcessManifestJob.perform_now('/tmp/new.db')"
     rails runner "UpdateWeaponsJob.perform_now"
 
 ## upload database to heroku
