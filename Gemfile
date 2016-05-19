@@ -21,4 +21,5 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'faraday'
 end
