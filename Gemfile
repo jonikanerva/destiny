@@ -12,6 +12,8 @@ gem 'dotenv-rails'
 
 gem 'puma'
 gem 'dalli'
+gem 'faraday'
+gem 'rubyzip'
 
 group :production do
   gem 'pg'
@@ -21,6 +23,4 @@ end
 
 group :development do
   gem 'sqlite3'
-  gem 'faraday'
-  gem 'rubyzip'
 end
