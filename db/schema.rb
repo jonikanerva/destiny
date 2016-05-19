@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160515083332) do
+ActiveRecord::Schema.define(version: 20160519181739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,12 +54,12 @@ ActiveRecord::Schema.define(version: 20160515083332) do
   add_index "values", ["stat_hash"], name: "index_values_on_stat_hash", using: :btree
 
   create_table "weapons", force: :cascade do |t|
-    t.integer  "item_hash",        limit: 8
-    t.string   "name",             limit: 255
+    t.integer  "item_hash",            limit: 8
+    t.string   "name",                 limit: 255
     t.text     "description"
-    t.string   "category",         limit: 255
-    t.string   "tier",             limit: 255
-    t.string   "icon",             limit: 255
+    t.string   "category",             limit: 255
+    t.string   "tier",                 limit: 255
+    t.string   "icon",                 limit: 255
     t.integer  "attack"
     t.integer  "optics"
     t.integer  "rate_of_fire"
@@ -72,12 +72,40 @@ ActiveRecord::Schema.define(version: 20160515083332) do
     t.integer  "equip_speed"
     t.integer  "aim_assistance"
     t.integer  "recoil_direction"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.integer  "tier_number"
     t.integer  "charge_rate"
     t.integer  "velocity"
     t.integer  "blast_radius"
+    t.integer  "optics_min"
+    t.integer  "optics_max"
+    t.integer  "rate_of_fire_min"
+    t.integer  "rate_of_fire_max"
+    t.integer  "charge_rate_min"
+    t.integer  "charge_rate_max"
+    t.integer  "velocity_min"
+    t.integer  "velocity_max"
+    t.integer  "blast_radius_min"
+    t.integer  "blast_radius_max"
+    t.integer  "impact_min"
+    t.integer  "impact_max"
+    t.integer  "range_min"
+    t.integer  "range_max"
+    t.integer  "stability_min"
+    t.integer  "stability_max"
+    t.integer  "magazine_min"
+    t.integer  "magazine_max"
+    t.integer  "reload_speed_min"
+    t.integer  "reload_speed_max"
+    t.integer  "inventory_size_min"
+    t.integer  "inventory_size_max"
+    t.integer  "equip_speed_min"
+    t.integer  "equip_speed_max"
+    t.integer  "aim_assistance_min"
+    t.integer  "aim_assistance_max"
+    t.integer  "recoil_direction_min"
+    t.integer  "recoil_direction_max"
   end
 
   add_index "weapons", ["category"], name: "index_weapons_on_category", using: :btree
