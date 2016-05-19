@@ -22,4 +22,5 @@ end
 group :development do
   gem 'sqlite3'
   gem 'faraday'
+  gem 'rubyzip'
 end
