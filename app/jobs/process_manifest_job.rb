@@ -1,4 +1,4 @@
-class FetchManifestJob < ActiveJob::Base
+class ProcessManifestJob < ActiveJob::Base
   queue_as :default
 
   def perform(database_file)
