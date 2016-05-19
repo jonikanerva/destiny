@@ -1,7 +1,7 @@
-require 'faraday'
-require 'zip'
-
 class FetchManifestJob < ActiveJob::Base
+  require 'faraday'
+  require 'zip'
+
   queue_as :default
 
   URL = 'http://www.bungie.net'
