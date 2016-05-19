@@ -8,6 +8,10 @@ class WeaponsController < ApplicationController
     def weapon_types
       weapons = Weapon.all
 
+      if params[:current]
+        weapons = Weapon.current
+      end
+
       type = case params[:type]
       when 'auto_rifle'
         weapons.auto_rifles
