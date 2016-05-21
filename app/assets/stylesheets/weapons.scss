@@ -26,9 +26,27 @@ form {
   text-align: center;
 }
 
-a {
+a,
+thead .sorting,
+thead .sorting_asc,
+thead .sorting_desc {
   color: #007;
   text-decoration: none;
+  cursor: pointer;
+}
+
+tbody {
+  .sorting_1 {
+    color: green;
+  }
+
+  .sorting_2 {
+    color: blue;
+  }
+
+  .sorting_3 {
+    color: purple;
+  }
 }
 
 table.center {
@@ -44,10 +62,23 @@ td, th {
   padding: 5px;
 }
 
+td.compare {
+  background: white;
+  padding-right: 10px;
+
+  input {
+    vertical-align: middle;
+  }
+}
+
 td.name, th.name {
   min-width: 300px;
   width: 300px;
   text-align: left;
+}
+
+.hidden {
+  display: none;
 }
 
 td.tier, th.tier {
@@ -97,24 +128,13 @@ td.stat, th.stat {
   background-color: #6a9bd4;
 }
 
-.header {
-  background-color: #fff;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  bottom: auto;
-  border-bottom: 1px solid black;
-}
+.dataTables_wrapper {
+  .dataTables_filter {
+    text-align: center;
+    height: 40px;
 
-.outer {
-  background-color: #fff;
-  position: relative;
-  height: 130px;
-}
-
-.outer .header {
-  position: absolute;
-  bottom: 0;
-  z-index: 2;
-  top: auto;
+    input {
+      width: 300px;
+    }
+  }
 }
