@@ -2,7 +2,7 @@ $ ->
   $('#weapons').DataTable({
     "paging": false
     "info": false
-    "order": [[1, 'desc']]
+    "order": [[2, 'desc']]
     "language": {
       "search": ""
     }
