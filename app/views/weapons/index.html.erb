@@ -1,4 +1,4 @@
-<%= form_tag weapons_index_path, method: :get do %>
+<%= form_tag root_path, method: :get do %>
   <%= label_tag :type, 'Select weapon type' %>
   <%= select_tag :type, weapon_type_options(params[:type]), onchange: 'submit();' %>
   <%= submit_tag 'Search', class: 'hide' %>
