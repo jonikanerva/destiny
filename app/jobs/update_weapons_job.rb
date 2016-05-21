@@ -9,10 +9,10 @@ class UpdateWeaponsJob < ActiveJob::Base
 
       params = {
         item_hash:            item.item_hash,
-        name:                 item.name,
-        description:          item.description,
-        category:             item.item_type_name,
-        tier:                 item.tier_type_name,
+        name:                 item.name.strip,
+        description:          item.description.strip,
+        category:             item.item_type_name.strip,
+        tier:                 item.tier_type_name.strip,
         tier_number:          item.tier_type,
         icon:                 item.icon,
         attack:               value_by_name(item, 'Attack').try(:maximum_value),
