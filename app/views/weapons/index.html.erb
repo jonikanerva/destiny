@@ -9,9 +9,7 @@
     <%= render 'header' %>
 
     <tbody>
-      <% @weapons.each do |weapon| %>
-        <%= render partial: 'row', locals: { weapon: weapon } %>
-      <% end %>
+      <%= render partial: "weapon", collection: @weapons %>
     </tbody>
   </table>
 <% end %>
