@@ -1,5 +1,6 @@
 <tr class="active <%= cycle("odd", "even") %>">
   <td class='compare'>
+    <span class='hidden'></span>
     <%= check_box_tag :compare %>
   </td>
 
@@ -8,7 +9,7 @@
   </td>
 
   <td class="tier <%= weapon.tier %>">
-    <span class='tier_number'><%= weapon.tier_number %></span>
+    <span class='hidden'><%= weapon.tier_number %></span>
     <%= link_to weapon.tier.first, weapon_image(weapon) %>
   </td>
 
