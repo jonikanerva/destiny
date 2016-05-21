@@ -1,7 +1,10 @@
 <tr class="active <%= cycle("odd", "even") %>">
   <td class='compare'>
-    <span class='hidden'></span>
     <%= check_box_tag :compare %>
+  </td>
+
+  <td class='hidden'>
+    0
   </td>
 
   <td class='name'>

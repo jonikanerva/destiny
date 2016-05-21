@@ -4,6 +4,9 @@
   <%= submit_tag 'Search', class: 'hide' %>
 <% end %>
 
+<%= button_tag :compare, id: :weapon_compare %>
+<%= button_tag :compare_off, id: :weapon_compare_off, class: :hidden %>
+
 <% cache ['v2', cache_key_for_weapons, params[:type]] do %>
   <table class='center' id='weapons'>
     <%= render 'header' %>
