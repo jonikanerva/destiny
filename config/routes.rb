@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  root 'weapons#index'
-  get  'weapons/index'
+  get "/:type", to: 'weapons#index', as: :weapons
+  get "/" => redirect("/auto_rifle")
 end

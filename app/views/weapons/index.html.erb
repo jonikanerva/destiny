@@ -1,6 +1,6 @@
-<%= form_tag root_path, method: :get do %>
+<%= form_tag weapons_path, method: :get, enforce_utf8: false do %>
   <%= label_tag :type, 'Select weapon type' %>
-  <%= select_tag :type, weapon_type_options(params[:type]), onchange: 'submit();' %>
+  <%= select_tag :type, weapon_type_options(params[:type]) %>
   <%= submit_tag 'Search', class: 'hide' %>
 <% end %>
 

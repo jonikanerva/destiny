@@ -11,3 +11,6 @@ $ ->
   $('tr.active').on 'click', ->
     if event.target.type != 'checkbox'
       $(':checkbox', this).trigger('click')
+
+  $('#type').on 'change', ->
+    window.location = $(this).find('option:selected').val();
