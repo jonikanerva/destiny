@@ -52,6 +52,7 @@ tbody {
 table.center {
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 }
 
 tr.active:hover {
@@ -166,4 +167,13 @@ td.stat, th.stat {
   .off {
     background: #aa3333;
   }
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
