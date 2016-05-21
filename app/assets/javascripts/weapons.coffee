@@ -7,6 +7,9 @@ $ ->
     "language": {
       "search": ""
     }
+    'columnDefs': [
+      { "orderData" : [1], "targets": [0] }
+    ]
   }
 
   # clicking a row adds row to compare
