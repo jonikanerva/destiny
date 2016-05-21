@@ -96,25 +96,3 @@ td.stat, th.stat {
 .Rare {
   background-color: #6a9bd4;
 }
-
-.header {
-  background-color: #fff;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  bottom: auto;
-  border-bottom: 1px solid black;
-}
-
-.outer {
-  background-color: #fff;
-  position: relative;
-  height: 130px;
-}
-
-.outer .header {
-  position: absolute;
-  bottom: 0;
-  z-index: 2;
-  top: auto;
-}
