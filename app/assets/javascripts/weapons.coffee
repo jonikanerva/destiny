@@ -7,6 +7,7 @@ $ ->
     "language": {
       "search": ""
       "searchPlaceholder": "Search weapons"
+      "zeroRecords": "No weapons selected for compare"
     }
     'columnDefs': [
       { "orderData" : [1], "targets": [0] }
