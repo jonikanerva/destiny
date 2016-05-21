@@ -26,9 +26,27 @@ form {
   text-align: center;
 }
 
-a {
+a,
+thead .sorting,
+thead .sorting_asc,
+thead .sorting_desc {
   color: #007;
   text-decoration: none;
+  cursor: pointer;
+}
+
+tbody {
+  .sorting_1 {
+    color: green;
+  }
+
+  .sorting_2 {
+    color: blue;
+  }
+
+  .sorting_3 {
+    color: purple;
+  }
 }
 
 table.center {
@@ -95,4 +113,15 @@ td.stat, th.stat {
 
 .Rare {
   background-color: #6a9bd4;
+}
+
+.dataTables_wrapper {
+  .dataTables_filter {
+    text-align: center;
+    height: 40px;
+
+    input {
+      width: 300px;
+    }
+  }
 }
