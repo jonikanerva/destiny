@@ -7,3 +7,7 @@ $ ->
       "search": ""
     }
   });
+
+  $('tr.active').on 'click', ->
+    if event.target.type != 'checkbox'
+      $(':checkbox', this).trigger('click')

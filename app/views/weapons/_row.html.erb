@@ -1,4 +1,8 @@
 <tr class="active <%= cycle("odd", "even") %>">
+  <td class='compare'>
+    <%= check_box_tag :compare %>
+  </td>
+
   <td class='name'>
     <%= armory_link weapon  %>
   </td>
