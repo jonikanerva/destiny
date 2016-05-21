@@ -125,12 +125,22 @@ td.stat, th.stat {
 }
 
 .dataTables_wrapper {
-  .dataTables_filter {
-    text-align: center;
-    height: 40px;
+  text-align: center;
 
-    input {
-      width: 300px;
+  .dataTables_filter {
+    padding-bottom: 20px;
+
+    input[type=search] {
+      appearance: none;
+      -moz-appearance:none;
+      -webkit-appearance: none;
+
+      height: 40px;
+      width: 400px;
+      font-size: 15pt;
+
+      margin: 0px;
+      padding: 0px;
     }
   }
 }
