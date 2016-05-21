@@ -6,10 +6,13 @@ $ ->
     "order": [[3, 'desc']]
     "language": {
       "search": ""
+      "searchPlaceholder": "Search weapons"
     }
     'columnDefs': [
       { "orderData" : [1], "targets": [0] }
     ]
+    "initComplete": ->
+      $('div.dataTables_filter input').focus()
   }
 
   # clicking a row adds row to compare
