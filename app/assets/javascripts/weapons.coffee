@@ -1,5 +1,8 @@
 $ ->
   $('#weapons').DataTable({
     "paging": false,
-    "info": false
+    "info": false,
+    "language": {
+      "search": ""
+    }
   });
