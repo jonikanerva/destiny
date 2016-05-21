@@ -7,28 +7,28 @@ class WeaponsController < ApplicationController
 
     def weapon_types
       case params[:type]
-      when 'auto_rifle'
+      when 'auto_rifles'
         Weapon.auto_rifles
-      when 'hand_cannon'
+      when 'hand_cannons'
         Weapon.hand_cannons
-      when 'pulse_rifle'
+      when 'pulse_rifles'
         Weapon.pulse_rifles
-      when 'scout_rifle'
+      when 'scout_rifles'
         Weapon.scout_rifles
-      when 'fusion_rifle'
+      when 'fusion_rifles'
         Weapon.fusion_rifles
-      when 'shotgun'
+      when 'shotguns'
         Weapon.shotguns
-      when 'sidearm'
+      when 'sidearms'
         Weapon.sidearms
-      when 'sniper_rifle'
+      when 'sniper_rifles'
         Weapon.sniper_rifles
-      when 'machine_gun'
+      when 'machine_guns'
         Weapon.machine_guns
-      when 'rocket_launcher'
+      when 'rocket_launchers'
         Weapon.rocket_launchers
       else
-        Weapon.auto_rifles
+        redirect_to weapons_path(:auto_rifles)
       end
     end
 end

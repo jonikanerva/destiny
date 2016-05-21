@@ -2,22 +2,22 @@ module WeaponsHelper
   def weapon_type_options(selected)
     options = {
       'Primary' => [
-        ['Auto Rifle',  :auto_rifle ],
-        ['Hand Cannon', :hand_cannon],
-        ['Pulse Rifle', :pulse_rifle],
-        ['Scout Rifle', :scout_rifle],
+        ['Auto Rifle',  :auto_rifles ],
+        ['Hand Cannon', :hand_cannons],
+        ['Pulse Rifle', :pulse_rifles],
+        ['Scout Rifle', :scout_rifles],
       ],
 
       'Secondary' => [
-        ['Fusion Rifle', :fusion_rifle],
-        ['Shotgun',      :shotgun     ],
-        ['Sidearm',      :sidearm     ],
-        ['Sniper Rifle', :sniper_rifle],
+        ['Fusion Rifle', :fusion_rifles],
+        ['Shotgun',      :shotguns     ],
+        ['Sidearm',      :sidearms     ],
+        ['Sniper Rifle', :sniper_rifles],
       ],
 
       'Heavy' => [
-        ['Machine Gun',     :machine_gun    ],
-        ['Rocket Launcher', :rocket_launcher],
+        ['Machine Gun',     :machine_guns    ],
+        ['Rocket Launcher', :rocket_launchers],
       ],
     }
 
