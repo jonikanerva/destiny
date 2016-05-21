@@ -21,7 +21,7 @@ select {
   font-size: 15pt;
 }
 
-form {
+.topnav {
   padding: 30px;
   text-align: center;
 }
@@ -101,10 +101,6 @@ td.stat, th.stat {
   background-color: #ddd;
 }
 
-.hide {
-  display: none;
-}
-
 .Uncommon {
   background-color: #5cb370;
 }
@@ -136,5 +132,28 @@ td.stat, th.stat {
     input {
       width: 300px;
     }
+  }
+}
+
+.topnav {
+  button {
+    margin-left: 30px;
+    text-align: center;
+    font-size: 20px;
+    padding: 3px 10px;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #ffffff;
+  }
+
+  .on {
+    background: #3333aa;
+  }
+
+  .off {
+    background: #aa3333;
   }
 }
