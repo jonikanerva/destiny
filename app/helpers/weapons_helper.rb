@@ -40,7 +40,7 @@ module WeaponsHelper
   def stat_description(stat)
     stat = Stat.find_by(name: stat)
 
-    "#{stat.name} - #{stat.description}"
+    "#{stat.name} - #{stat.description}" if stat
   end
 
   def weapon_image(weapon)
