@@ -16,8 +16,8 @@ module WeaponsHelper
       ],
 
       'Heavy' => [
-        ['Machine Gun',     :machine_guns    ],
-        ['Rocket Launcher', :rocket_launchers],
+        ['Machine Guns',     :machine_guns    ],
+        ['Rocket Launchers', :rocket_launchers],
       ],
     }
 
