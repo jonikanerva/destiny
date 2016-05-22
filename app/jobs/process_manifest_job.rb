@@ -6,6 +6,9 @@ class ProcessManifestJob < ActiveJob::Base
 
     raise "Invalid database" unless File.exist?(@database_file)
 
+    Value.delete_all
+    Item.delete_all
+
     update_stats
     update_items_and_values
   end
@@ -55,9 +58,16 @@ class ProcessManifestJob < ActiveJob::Base
           insert_value(item, v)
         end
 
-        # loop values from all sources
+        # loop all drop sources
         sources = json["sources"] || []
         sources.each do |source|
+          # check if item still drops
+          spawns = source["spawnIndexes"]
+          disabled = spawns.empty? || (spawns.count == 1 && spawns.first.zero?)
+
+          # skip if this item does not drop anymore
+          next if disabled
+
           # loop stat values
           source["computedStats"].each do |v|
             insert_value(item, v)
@@ -87,7 +97,7 @@ class ProcessManifestJob < ActiveJob::Base
 
     def progress_bar(total, title)
       ProgressBar.create(
-        format: "%t: %B (%p%% %e)",
+        format: "%t: [%B] (%j%% %e)",
         length: 80,
         throttle_rate: 1,
         title: title,
