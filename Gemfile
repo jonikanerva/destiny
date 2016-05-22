@@ -14,6 +14,7 @@ gem 'puma'
 gem 'dalli'
 gem 'faraday'
 gem 'rubyzip'
+gem 'ruby-progressbar'
 
 group :production do
   gem 'pg'
