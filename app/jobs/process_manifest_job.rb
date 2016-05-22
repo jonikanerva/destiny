@@ -70,7 +70,7 @@ class ProcessManifestJob < ActiveJob::Base
 
           # loop stat values
           source["computedStats"].each do |v|
-            insert_value(item, v)
+            insert_value(item, v, false)
           end
         end
 
@@ -78,20 +78,14 @@ class ProcessManifestJob < ActiveJob::Base
       end
     end
 
-    def insert_value(item, v)
+    def insert_value(item, v, default_value = true)
       hash = v.last
 
-      value = item.values.find_or_initialize_by(
-        stat_hash:     hash["statHash"],
-        value:         hash["value"],
-        minimum_value: hash["minimum"],
-        maximum_value: hash["maximum"],
-      )
-
-      value.stat_hash        = hash["statHash"]
-      value.value            = hash["value"]
-      value.minimum_value    = hash["minimum"]
-      value.maximum_value    = hash["maximum"]
+      value = item.values.find_or_initialize_by stat_hash: hash["statHash"]
+      value.stat_hash     = hash["statHash"]
+      value.value         = hash["value"]   if default_value # default value only from default
+      value.minimum_value = hash["minimum"] if value.minimum_value.nil? || hash["minimum"] < value.minimum_value
+      value.maximum_value = hash["maximum"] if value.maximum_value.nil? || hash["maximum"] > value.maximum_value
       value.save!
     end
 
