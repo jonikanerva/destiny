@@ -1,6 +1,8 @@
 <div class='topnav'>
-  Select weapon type
+  Showing
   <%= select_tag :type, weapon_type_options(params[:type]) %>
+  with
+  <%= select_tag :value, weapon_value_options %>
   <%= button_tag "Compare", id: :weapon_compare, class: :on %>
   <%= button_tag "Compare", id: :weapon_compare_off, class: "hidden off" %>
 </div>

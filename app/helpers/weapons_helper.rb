@@ -2,17 +2,17 @@ module WeaponsHelper
   def weapon_type_options(selected)
     options = {
       'Primary' => [
-        ['Auto Rifle',  :auto_rifles ],
-        ['Hand Cannon', :hand_cannons],
-        ['Pulse Rifle', :pulse_rifles],
-        ['Scout Rifle', :scout_rifles],
+        ['Auto Rifles',  :auto_rifles ],
+        ['Hand Cannons', :hand_cannons],
+        ['Pulse Rifles', :pulse_rifles],
+        ['Scout Rifles', :scout_rifles],
       ],
 
       'Secondary' => [
-        ['Fusion Rifle', :fusion_rifles],
-        ['Shotgun',      :shotguns     ],
-        ['Sidearm',      :sidearms     ],
-        ['Sniper Rifle', :sniper_rifles],
+        ['Fusion Rifles', :fusion_rifles],
+        ['Shotguns',      :shotguns     ],
+        ['Sidearms',      :sidearms     ],
+        ['Sniper Rifles', :sniper_rifles],
       ],
 
       'Heavy' => [
@@ -22,6 +22,16 @@ module WeaponsHelper
     }
 
     grouped_options_for_select options, selected
+  end
+
+  def weapon_value_options
+    options = [
+      ['default values', :default],
+      ['maximum values', :max    ],
+      ['minimum values', :min    ],
+    ]
+
+    options_for_select options
   end
 
   def armory_link(weapon)
