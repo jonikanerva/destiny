@@ -2,26 +2,36 @@ module WeaponsHelper
   def weapon_type_options(selected)
     options = {
       'Primary' => [
-        ['Auto Rifle',  :auto_rifles ],
-        ['Hand Cannon', :hand_cannons],
-        ['Pulse Rifle', :pulse_rifles],
-        ['Scout Rifle', :scout_rifles],
+        ['Auto Rifles',  :auto_rifles ],
+        ['Hand Cannons', :hand_cannons],
+        ['Pulse Rifles', :pulse_rifles],
+        ['Scout Rifles', :scout_rifles],
       ],
 
       'Secondary' => [
-        ['Fusion Rifle', :fusion_rifles],
-        ['Shotgun',      :shotguns     ],
-        ['Sidearm',      :sidearms     ],
-        ['Sniper Rifle', :sniper_rifles],
+        ['Fusion Rifles', :fusion_rifles],
+        ['Shotguns',      :shotguns     ],
+        ['Sidearms',      :sidearms     ],
+        ['Sniper Rifles', :sniper_rifles],
       ],
 
       'Heavy' => [
-        ['Machine Gun',     :machine_guns    ],
-        ['Rocket Launcher', :rocket_launchers],
+        ['Machine Guns',     :machine_guns    ],
+        ['Rocket Launchers', :rocket_launchers],
       ],
     }
 
     grouped_options_for_select options, selected
+  end
+
+  def weapon_value_options
+    options = [
+      ['default values', :default],
+      ['maximum values', :max    ],
+      ['minimum values', :min    ],
+    ]
+
+    options_for_select options
   end
 
   def armory_link(weapon)
@@ -45,5 +55,15 @@ module WeaponsHelper
 
   def weapon_image(weapon)
     image_path "weapons/#{File.basename(weapon.icon)}"
+  end
+
+  def stat_row(weapon, stat)
+    data = {
+      default: weapon.send(stat),
+      min: weapon.send("#{stat}_min"),
+      max: weapon.send("#{stat}_max"),
+    }
+
+    content_tag :td, weapon.send(stat), class: :stat, data: data
   end
 end

@@ -41,6 +41,23 @@ $ ->
     table.columns(1).search("0|1", true).draw()
     toggle_compare()
 
+  # changing value toggles different values
+  $('#value').on 'change', ->
+    type = $(this).find('option:selected').val();
+
+    # loop all cells
+    table.cells().every ->
+      stat_default = $(this.node()).data('default')
+      stat_max = $(this.node()).data('max')
+      stat_min = $(this.node()).data('min')
+
+      if type == 'max' && stat_max
+        $(this.data(stat_max))
+      else if type == 'min' && stat_min
+        $(this.data(stat_min))
+      else if type == 'default' && stat_default
+        $(this.data(stat_default))
+
 # toggle compare on/off buttons
 toggle_compare = ->
   $('#weapon_compare').toggle()
