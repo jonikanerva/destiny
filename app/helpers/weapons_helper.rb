@@ -46,4 +46,14 @@ module WeaponsHelper
   def weapon_image(weapon)
     image_path "weapons/#{File.basename(weapon.icon)}"
   end
+
+  def stat_row(weapon, stat)
+    data = {
+      default: weapon.send(stat),
+      min: weapon.send("#{stat}_min"),
+      max: weapon.send("#{stat}_max"),
+    }
+
+    content_tag :td, weapon.send(stat), class: :stat, data: data
+  end
 end
