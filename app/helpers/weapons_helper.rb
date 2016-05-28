@@ -57,13 +57,18 @@ module WeaponsHelper
     image_path "weapons/#{File.basename(weapon.icon)}"
   end
 
-  def stat_row(weapon, stat)
+  def stat_row(weapon, stat, options = {})
     data = {
       default: weapon.send(stat),
       min: weapon.send("#{stat}_min"),
       max: weapon.send("#{stat}_max"),
     }
 
-    content_tag :td, weapon.send(stat), class: :stat, data: data
+    default_options = {
+      class: :stat,
+      data: data,
+    }.merge options
+
+    content_tag :td, weapon.send(stat), default_options
   end
 end

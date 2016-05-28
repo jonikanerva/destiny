@@ -12,12 +12,12 @@
     <%= armory_link weapon  %>
   </td>
 
-  <td class="tier <%= weapon.tier %>">
+  <td class="tier hide_on_small <%= weapon.tier %>">
     <span class='hidden'><%= weapon.tier_number %></span>
     <%= link_to weapon.tier.first, weapon_image(weapon) %>
   </td>
 
-  <td class='stat'>
+  <td class='stat hide_on_small'>
     <%= weapon.attack %>
   </td>
 
@@ -40,7 +40,7 @@
   <% end %>
 
   <%= stat_row weapon, :aim_assistance %>
-  <%= stat_row weapon, :magazine %>
-  <%= stat_row weapon, :reload_speed %>
-  <%= stat_row weapon, :equip_speed %>
+  <%= stat_row weapon, :magazine, class: 'stat hide_on_small' %>
+  <%= stat_row weapon, :reload_speed, class: 'stat hide_on_medium' %>
+  <%= stat_row weapon, :equip_speed, class: 'stat hide_on_medium' %>
 </tr>

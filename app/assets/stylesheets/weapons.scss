@@ -25,6 +25,7 @@ select {
 .topnav {
   padding: 30px;
   text-align: center;
+  white-space: nowrap;
 }
 
 a,
@@ -82,10 +83,14 @@ td.compare {
 }
 
 td.name, th.name {
-  min-width: 300px;
-  max-width: 300px;
-  width: 300px;
+  min-width: 250px;
+  max-width: 250px;
+  width: 250px;
   text-align: left;
+
+  span {
+    width: 0px;
+  }
 }
 
 .hidden {
@@ -195,4 +200,24 @@ td.stat, th.stat {
   padding: 30px;
   font-size: 10px;
   color: #c0c0c0;
+}
+
+@media all and (max-width: 1200px) {
+  .hide_on_medium {
+    display:none;
+    width:0;
+    height:0;
+    opacity:0;
+    visibility: collapse;
+  }
+}
+
+@media all and (max-width: 1040px) {
+  .hide_on_small {
+    display:none;
+    width:0;
+    height:0;
+    opacity:0;
+    visibility: collapse;
+  }
 }
