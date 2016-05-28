@@ -60,6 +60,11 @@ tr.active:hover {
   background-color: #ddf;
 }
 
+tr {
+  padding: 0px;
+  margin: 0px;
+}
+
 td, th {
   padding: 5px;
 }
@@ -67,6 +72,9 @@ td, th {
 td.compare {
   background: white;
   padding-right: 10px;
+  min-width: 20px;
+  max-width: 20px;
+  width: 20px;
 
   input {
     vertical-align: middle;
@@ -75,6 +83,7 @@ td.compare {
 
 td.name, th.name {
   min-width: 300px;
+  max-width: 300px;
   width: 300px;
   text-align: left;
 }
@@ -84,12 +93,14 @@ td.name, th.name {
 }
 
 td.tier, th.tier {
+  max-width: 45px;
   min-width: 45px;
   width: 45px;
   text-align: center;
 }
 
 td.stat, th.stat {
+  max-width: 75px;
   min-width: 75px;
   width: 75px;
   text-align: right;
