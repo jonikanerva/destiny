@@ -61,11 +61,6 @@ tr.active:hover {
   background-color: #ddf;
 }
 
-tr {
-  padding: 0px;
-  margin: 0px;
-}
-
 td, th {
   padding: 5px;
 }
@@ -87,6 +82,9 @@ td.name, th.name {
   max-width: 250px;
   width: 250px;
   text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
   span {
     width: 0px;
