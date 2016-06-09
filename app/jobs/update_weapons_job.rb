@@ -3,7 +3,9 @@ require 'open-uri'
 class UpdateWeaponsJob < ActiveJob::Base
   queue_as :default
 
-  def perform()
+  def perform
+    Weapon.delete_all
+
     Item.weapons.includes(:values).find_each do |item|
       weapon = Weapon.find_or_initialize_by item_hash: item.item_hash
 
