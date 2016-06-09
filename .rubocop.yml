@@ -1,0 +1,33 @@
+Metrics/AbcSize:
+  Max: 41
+
+Metrics/ClassLength:
+  Max: 308
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 25
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/IndentationConsistency:
+  SupportedStyles: rails
+
+Style/StringLiterals:
+  SupportedStyles: single_quotes, double_quotes
+  ConsistentQuotesInMultiline: true
+
+Style/TrailingCommaInArguments:
+  SupportedStyles: comma
+
+Style/TrailingCommaInLiteral:
+  SupportedStyles: comma
