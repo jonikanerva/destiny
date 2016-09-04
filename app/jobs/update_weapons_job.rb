@@ -17,7 +17,9 @@ class UpdateWeaponsJob < ActiveJob::Base
         tier:                 item.tier_type_name.strip,
         tier_number:          item.tier_type,
         icon:                 item.icon,
-        attack:               value_by_name(item, 'Attack').try(:maximum_value),
+        attack:               value_by_name(item, 'Attack').try(:value),
+        attack_min:           value_by_name(item, 'Attack').try(:minimum_value),
+        attack_max:           value_by_name(item, 'Attack').try(:maximum_value),
         optics:               value_by_name(item, 'Optics').try(:value),
         optics_min:           value_by_name(item, 'Optics').try(:minimum_value),
         optics_max:           value_by_name(item, 'Optics').try(:maximum_value),
@@ -67,7 +69,7 @@ class UpdateWeaponsJob < ActiveJob::Base
 
     # Attack zero means weapon is "removed"
     # Weapon.where(attack: 0).delete_all
-    Weapon.where("attack < 160").delete_all
+    Weapon.where('attack_max < 160').where.not(tier_number: 6).delete_all
 
     # Download images to assets
     download_images
