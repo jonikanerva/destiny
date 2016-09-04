@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519181739) do
+ActiveRecord::Schema.define(version: 20160904064249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
-    t.integer  "item_hash",      limit: 8
+    t.bigint   "item_hash"
     t.string   "name",           limit: 255
     t.text     "description"
     t.string   "icon",           limit: 255
@@ -26,35 +25,32 @@ ActiveRecord::Schema.define(version: 20160519181739) do
     t.string   "item_type_name", limit: 255
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.index ["item_hash"], name: "index_items_on_item_hash", using: :btree
   end
-
-  add_index "items", ["item_hash"], name: "index_items_on_item_hash", using: :btree
 
   create_table "stats", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.string   "description", limit: 255
-    t.integer  "stat_hash",   limit: 8
+    t.bigint   "stat_hash"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.index ["stat_hash"], name: "index_stats_on_stat_hash", using: :btree
   end
-
-  add_index "stats", ["stat_hash"], name: "index_stats_on_stat_hash", using: :btree
 
   create_table "values", force: :cascade do |t|
     t.integer  "item_id"
-    t.integer  "stat_hash",     limit: 8
+    t.bigint   "stat_hash"
     t.integer  "value"
     t.integer  "minimum_value"
     t.integer  "maximum_value"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["item_id"], name: "index_values_on_item_id", using: :btree
+    t.index ["stat_hash"], name: "index_values_on_stat_hash", using: :btree
   end
 
-  add_index "values", ["item_id"], name: "index_values_on_item_id", using: :btree
-  add_index "values", ["stat_hash"], name: "index_values_on_stat_hash", using: :btree
-
   create_table "weapons", force: :cascade do |t|
-    t.integer  "item_hash",            limit: 8
+    t.bigint   "item_hash"
     t.string   "name",                 limit: 255
     t.text     "description"
     t.string   "category",             limit: 255
@@ -106,9 +102,10 @@ ActiveRecord::Schema.define(version: 20160519181739) do
     t.integer  "aim_assistance_max"
     t.integer  "recoil_direction_min"
     t.integer  "recoil_direction_max"
+    t.integer  "attack_min"
+    t.integer  "attack_max"
+    t.index ["category"], name: "index_weapons_on_category", using: :btree
   end
-
-  add_index "weapons", ["category"], name: "index_weapons_on_category", using: :btree
 
   add_foreign_key "values", "items"
 end
