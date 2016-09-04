@@ -23,6 +23,19 @@ class ProcessManifestJob < ActiveJob::Base
       result = db.execute('select * from DestinyStatDefinition')
       progressbar = progress_bar result.count, 'Updating stats'
 
+      # this is what a stat hash looks like
+      # {
+      #   "statHash":2391494160,
+      #   "statName":"Light",
+      #   "statDescription":"Light increases your level, increasing the damage your abilities deal against higher-level enemies.",
+      #   "icon":"/common/destiny_content/icons/691a31231d7d106ead91bd8b8e017e3b.png",
+      #   "statIdentifier":"STAT_LIGHT",
+      #   "interpolate":false,
+      #   "hash":2391494160,
+      #   "index":0,
+      #   "redacted":false
+      # }
+
       result.each do |row|
         json = JSON.parse row.second
 
