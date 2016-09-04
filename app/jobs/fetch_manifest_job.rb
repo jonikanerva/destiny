@@ -4,13 +4,13 @@ class FetchManifestJob < ActiveJob::Base
 
   queue_as :default
 
-  URL = 'http://www.bungie.net'
+  URL = 'https://www.bungie.net'.freeze
 
   def perform(api_key = nil)
     @api_key = ENV['BUNGIE_API_KEY'] || api_key
     @connection = Faraday.new url: URL
 
-    raise "Invalid api key" if @api_key.nil?
+    raise 'Invalid api key' if @api_key.nil?
 
     zipfile = download_file(database_url)
     file = extract_file(zipfile)
@@ -27,11 +27,11 @@ class FetchManifestJob < ActiveJob::Base
       end
 
       json = JSON.parse response.body
-      json["Response"]["mobileWorldContentPaths"]["en"]
+      json['Response']['mobileWorldContentPaths']['en']
     end
 
     def download_file(file)
-      puts "Downloading.."
+      puts 'Downloading..'
 
       response = @connection.get do |req|
         req.url file
@@ -48,7 +48,7 @@ class FetchManifestJob < ActiveJob::Base
     end
 
     def extract_file(file)
-      puts "Extracting.."
+      puts 'Extracting..'
 
       filename = temp_file(:db)
       Zip::File.open(file) { |zip_file| zip_file.first.extract(filename) }

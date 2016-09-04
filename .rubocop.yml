@@ -1,33 +1,49 @@
-Metrics/AbcSize:
-  Max: 41
+AllCops:
+  TargetRubyVersion: 2.3
 
-Metrics/ClassLength:
-  Max: 308
+##################### Style ####################################
 
-Metrics/LineLength:
-  Max: 120
+Style/CommandLiteral:
+  EnforcedStyle: percent_x
 
-Metrics/MethodLength:
-  Max: 25
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
 
-Style/AsciiComments:
-  Enabled: false
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/IndentationConsistency:
+  EnforcedStyle: rails
 
 Style/ClassAndModuleChildren:
-  Enabled: false
+  EnforcedStyle: compact
 
 Style/Documentation:
   Enabled: false
 
-Style/IndentationConsistency:
-  SupportedStyles: rails
+Style/AsciiComments:
+  Enabled: false
 
-Style/StringLiterals:
-  SupportedStyles: single_quotes, double_quotes
-  ConsistentQuotesInMultiline: true
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
 
-Style/TrailingCommaInArguments:
-  SupportedStyles: comma
+##################### Metrics ##################################
 
-Style/TrailingCommaInLiteral:
-  SupportedStyles: comma
+Metrics/LineLength:
+  Max: 140
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/ModuleLength:
+  Max: 200
+
+Metrics/MethodLength:
+  Max: 20
+
+##################### Lint ##################################
+
+##################### Rails ##################################
+
+Rails:
+  Enabled: true

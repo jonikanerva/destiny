@@ -78,8 +78,6 @@ class Item < ActiveRecord::Base
   private
 
     def value_by_name(name)
-      value_array = self.values.to_a
-
-      value_array.keep_if { |w| w.stat_name == name }.first.try(:value)
+      values.to_a.keep_if { |w| w.stat_name == name }.first.try(:value)
     end
 end
