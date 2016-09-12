@@ -66,8 +66,8 @@ class ProcessManifestJob < ActiveJob::Base
         item.item_type_name = json['itemTypeName']
         item.save!
 
-        # loop default item stat values
-        json['stats'].each do |v|
+        values = json['stats'] || []
+        values.each do |v|
           insert_value(item, v)
         end
 
@@ -82,7 +82,8 @@ class ProcessManifestJob < ActiveJob::Base
           next if disabled
 
           # loop stat values
-          source['computedStats'].each do |v|
+          values = source['computedStats'] || []
+          values.each do |v|
             insert_value(item, v, false)
           end
         end
