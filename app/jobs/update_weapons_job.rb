@@ -10,7 +10,7 @@ class UpdateWeaponsJob < ActiveJob::Base
 
     # Attack zero means weapon is "removed"
     # Weapon.where(attack: 0).delete_all
-    # Weapon.where('attack_max < 160').delete_all
+    Weapon.where('attack_max < 160').delete_all
 
     # Download images to assets
     download_images
