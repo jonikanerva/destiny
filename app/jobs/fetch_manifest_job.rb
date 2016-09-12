@@ -16,6 +16,7 @@ class FetchManifestJob < ActiveJob::Base
     file = extract_file(zipfile)
 
     puts file
+    puts %(rails runner "ProcessManifestJob.perform_now('#{file}')")
   end
 
   private
