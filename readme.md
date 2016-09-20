@@ -1,3 +1,29 @@
+## setup repo
+
+    cd ~/Sites
+    git clone git@github.com:jonikanerva/destiny.git
+
+    cd destiny
+    git remote add heroku git@heroku.com:destiny-weapons.git
+
+## setup db
+
+    createdb destiny
+    createuser -P -s -e lord_saladin
+
+## setup env
+
+    SECRET_KEY_BASE=key_base
+    DESTINY_DEVELOPMENT_HOSTNAME=localhost
+    DESTINY_DEVELOPMENT_DATABASE=destiny
+    DESTINY_DEVELOPMENT_USERNAME=lord_saladin
+    DESTINY_DEVELOPMENT_PASSWORD=password
+    BUNGIE_API_KEY=api_key
+
+## setup app
+
+    bin/setup
+
 ## deploy
 
     git push heroku master
