@@ -8,14 +8,14 @@
 
 ## setup db
 
-    createdb destiny
+    createdb destiny_dev
     createuser -P -s -e lord_saladin
 
 ## setup env
 
     SECRET_KEY_BASE=key_base
     DESTINY_DEVELOPMENT_HOSTNAME=localhost
-    DESTINY_DEVELOPMENT_DATABASE=destiny
+    DESTINY_DEVELOPMENT_DATABASE=destiny_dev
     DESTINY_DEVELOPMENT_USERNAME=lord_saladin
     DESTINY_DEVELOPMENT_PASSWORD=password
     BUNGIE_API_KEY=api_key
