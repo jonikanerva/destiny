@@ -8,6 +8,7 @@
 
 ## setup db
 
+    brew install postgresql memcached
     createdb destiny_dev
     createuser -P -s -e lord_saladin
 
