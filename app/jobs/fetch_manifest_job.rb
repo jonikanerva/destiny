@@ -23,7 +23,7 @@ class FetchManifestJob < ActiveJob::Base
 
     def database_url
       response = @connection.get do |req|
-        req.url '/Platform/Destiny/Manifest/'
+        req.url '/Platform/Destiny2/Manifest/'
         req.headers['X-API-Key'] = @api_key
       end
 
