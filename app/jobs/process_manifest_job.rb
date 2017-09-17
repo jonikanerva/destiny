@@ -59,6 +59,9 @@ class ProcessManifestJob < ActiveJob::Base
       result.each do |row|
         json = JSON.parse row.second
 
+        # save weapons only
+        next unless json['itemType'] == 3
+
         item = Item.find_or_initialize_by item_hash: json['hash']
         item.item_hash      = json['hash']
         item.name           = json['displayProperties']['name']
@@ -66,32 +69,12 @@ class ProcessManifestJob < ActiveJob::Base
         item.icon           = json['displayProperties']['icon']
         item.tier_type      = json['inventory']['tierType']
         item.tier_type_name = json['inventory']['tierTypeName']
-        item.item_type_name = json['itemType']
+        item.item_type_name = json['itemTypeDisplayName']
         item.save!
 
-        progressbar.increment
-        next
-
-        values = json['stats'] || []
+        values = json.dig('stats', 'stats') || []
         values.each do |v|
           insert_value(item, v)
-        end
-
-        # loop all drop sources
-        sources = json['sources'] || []
-        sources.each do |source|
-          # check if item still drops
-          spawns = source['spawnIndexes']
-          disabled = spawns.empty? || (spawns.count == 1 && spawns.first.zero?)
-
-          # skip if this item does not drop anymore
-          next if disabled
-
-          # loop stat values
-          values = source['computedStats'] || []
-          values.each do |v|
-            insert_value(item, v, false)
-          end
         end
 
         progressbar.increment
