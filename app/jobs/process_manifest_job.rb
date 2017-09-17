@@ -23,26 +23,29 @@ class ProcessManifestJob < ActiveJob::Base
       result = db.execute('select * from DestinyStatDefinition')
       progressbar = progress_bar result.count, 'Updating stats'
 
-      # this is what a stat hash looks like
+      # this is what a stat object looks like
       # {
-      #   "statHash":2391494160,
-      #   "statName":"Light",
-      #   "statDescription":"Light increases your level, increasing the damage your abilities deal against higher-level enemies.",
-      #   "icon":"/common/destiny_content/icons/691a31231d7d106ead91bd8b8e017e3b.png",
-      #   "statIdentifier":"STAT_LIGHT",
-      #   "interpolate":false,
-      #   "hash":2391494160,
-      #   "index":0,
-      #   "redacted":false
+      #   "displayProperties": {
+      #     "description": "Increases the speed at which you regain lost health.",
+      #     "name": "Recovery",
+      #     "icon": "/common/destiny2_content/icons/452c215c3ccaac0f9825b443e9d030c5.png",
+      #     "hasIcon": true
+      #   },
+      #   "aggregationType": 1,
+      #   "hasComputedBlock": false,
+      #   "interpolate": false,
+      #   "hash": 1943323491,
+      #   "index": 5,
+      #   "redacted": false
       # }
 
       result.each do |row|
         json = JSON.parse row.second
 
-        stat = Stat.find_or_initialize_by stat_hash: json['statHash']
-        stat.stat_hash   = json['statHash']
-        stat.name        = json['statName']
-        stat.description = json['statDescription']
+        stat = Stat.find_or_initialize_by stat_hash: json['hash']
+        stat.stat_hash   = json['hash']
+        stat.name        = json['displayProperties']['name']
+        stat.description = json['displayProperties']['description']
         stat.save!
 
         progressbar.increment
@@ -56,15 +59,18 @@ class ProcessManifestJob < ActiveJob::Base
       result.each do |row|
         json = JSON.parse row.second
 
-        item = Item.find_or_initialize_by item_hash: json['itemHash']
-        item.item_hash      = json['itemHash']
-        item.name           = json['itemName']
-        item.description    = json['itemDescription']
-        item.icon           = json['icon']
-        item.tier_type      = json['tierType']
-        item.tier_type_name = json['tierTypeName']
-        item.item_type_name = json['itemTypeName']
+        item = Item.find_or_initialize_by item_hash: json['hash']
+        item.item_hash      = json['hash']
+        item.name           = json['displayProperties']['name']
+        item.description    = json['displayProperties']['description']
+        item.icon           = json['displayProperties']['icon']
+        item.tier_type      = json['inventory']['tierType']
+        item.tier_type_name = json['inventory']['tierTypeName']
+        item.item_type_name = json['itemType']
         item.save!
+
+        progressbar.increment
+        next
 
         values = json['stats'] || []
         values.each do |v|
