@@ -33,8 +33,6 @@
 
     rails runner "FetchManifestJob.perform_now"
     rails runner "ProcessManifestJob.perform_now('/tmp/new.db')"
-    rails runner "UpdateWeaponsJob.perform_now"
-    rails runner "DeleteItemsJob.perform_now"
 
 ## delete heroku database
 
