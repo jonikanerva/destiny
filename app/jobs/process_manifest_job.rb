@@ -69,7 +69,8 @@ class ProcessManifestJob < ActiveJob::Base
         item.icon           = json['displayProperties']['icon']
         item.tier_type      = json['inventory']['tierType']
         item.tier_type_name = json['inventory']['tierTypeName']
-        item.item_type_name = json['itemTypeDisplayName']
+        item.item_type_name = json['itemTypeDisplayName'].pluralize
+        item.item_type      = json['itemTypeDisplayName'].pluralize.parameterize
         item.save!
 
         values = json.dig('stats', 'stats') || []
