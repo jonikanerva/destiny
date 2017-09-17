@@ -22,15 +22,21 @@ module WeaponsHelper
     "weapons/all-#{count}-#{max}"
   end
 
+  def stat_description(stat)
+    return "N/A - This stat has not been named in Bungie.net data" unless stat.name
+
+    "#{stat.name} - #{stat.description}"
+  end
+
   def weapon_image(weapon)
     "https://bungie.net/#{weapon.icon}"
   end
 
   def stat_row(stat, options = {})
     data = {
-      default: stat.value,
-      min: stat.minimum_value,
-      max: stat.maximum_value,
+      default: stat.value || 0,
+      min: stat.minimum_value || 0,
+      max: stat.maximum_value|| 0,
     }
 
     default_options = {
@@ -38,6 +44,6 @@ module WeaponsHelper
       data: data,
     }.merge options
 
-    content_tag :td, stat.value, default_options
+    content_tag :td, stat.value || 0, default_options
   end
 end
