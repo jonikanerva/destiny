@@ -15,12 +15,6 @@ module WeaponsHelper
     options_for_select options
   end
 
-  def armory_link(weapon)
-    link = "https://www.bungie.net/en/Armory/Detail?item=#{weapon.item_hash}"
-
-    link_to weapon.name, link, class: 'armory-link', title: weapon.description
-  end
-
   def cache_key_for_weapons
     count = Item.count
     max   = Item.maximum(:updated_at).try(:utc).try(:to_s, :number)
@@ -28,14 +22,8 @@ module WeaponsHelper
     "weapons/all-#{count}-#{max}"
   end
 
-  def stat_description(stat)
-    stat = Stat.find_by(name: stat)
-
-    "#{stat.name} - #{stat.description}" if stat
-  end
-
   def weapon_image(weapon)
-    image_tag "https://bungie.net/#{weapon.icon}"
+    "https://bungie.net/#{weapon.icon}"
   end
 
   def stat_row(stat, options = {})
