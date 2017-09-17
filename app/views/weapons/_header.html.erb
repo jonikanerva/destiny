@@ -16,7 +16,7 @@
     </th>
 
     <% weapon.values.order(:stat_hash).each do |value| %>
-      <th class='stat' title='<%= "#{value.stat.name} - #{value.stat.description}" %>'>
+      <th class='stat' title='<%= stat_description(value.stat) %>'>
         <%= (value.stat.name || 'N/A')[0..4] %>
       </th>
     <% end %>
