@@ -8,7 +8,7 @@ class WeaponsController < ApplicationController
     def weapon_types
       if params[:type] && Item.pluck(:item_type).include?(params[:type])
         cookies[:weapon_type] = params[:type]
-        Item.includes(:values, :stats).where(item_type: params[:type])
+        Item.includes(:values, :stats).where(item_type: params[:type]).where.not(name: 'Merciless')
       else
         type = cookies[:weapon_type] || 'auto-rifles'
         redirect_to weapons_path(type)
