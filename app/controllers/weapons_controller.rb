@@ -6,7 +6,7 @@ class WeaponsController < ApplicationController
   private
 
     def weapon_types
-      if params[:type]
+      if params[:type] && Item.pluck(:item_type).include?(params[:type])
         cookies[:weapon_type] = params[:type]
         Item.includes(:values, :stats).where(item_type: params[:type])
       else
