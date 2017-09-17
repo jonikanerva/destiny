@@ -8,39 +8,15 @@
   </td>
 
   <td class='name'>
-    <span class='hidden'><%= weapon.name %></span>
-    <%= armory_link weapon  %>
+    <%= weapon.name %>
   </td>
 
-  <td class="tier hide_on_small <%= weapon.tier %>">
-    <span class='hidden'><%= weapon.tier_number %></span>
-    <%= link_to weapon.tier.first, weapon_image(weapon) %>
+  <td class="tier hide_on_small <%= weapon.tier_type_name %>">
+    <span class='hidden'><%= weapon.tier_type %></span>
+    <%= link_to weapon.tier_type_name.first, weapon_image(weapon) %>
   </td>
 
-  <td class='stat hide_on_small'>
-    <%= weapon.attack_max %>
-  </td>
-
-  <%# Rocket launchers have velocity and blast radius, others impact and range %>
-  <% if params[:type] == 'rocket_launchers' %>
-    <%= stat_row weapon, :velocity %>
-    <%= stat_row weapon, :blast_radius %>
-  <% else %>
-    <%= stat_row weapon, :impact %>
-    <%= stat_row weapon, :range %>
+  <% weapon.values.order(:stat_hash).each do |value| %>
+    <%= stat_row(value) %>
   <% end %>
-
-  <%= stat_row weapon, :stability %>
-
-  <%# Fusion rifles have charge rate, others rate of fire %>
-  <% if params[:type] == 'fusion_rifles' %>
-    <%= stat_row weapon, :charge_rate %>
-  <% else %>
-    <%= stat_row weapon, :rate_of_fire %>
-  <% end %>
-
-  <%= stat_row weapon, :aim_assistance %>
-  <%= stat_row weapon, :magazine, class: 'stat hide_on_small' %>
-  <%= stat_row weapon, :reload_speed, class: 'stat hide_on_medium' %>
-  <%= stat_row weapon, :equip_speed, class: 'stat hide_on_medium' %>
 </tr>
