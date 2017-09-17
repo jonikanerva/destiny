@@ -8,6 +8,7 @@ class ProcessManifestJob < ActiveJob::Base
 
     Value.delete_all
     Item.delete_all
+    Stat.delete_all
 
     update_stats
     update_items_and_values
@@ -69,8 +70,8 @@ class ProcessManifestJob < ActiveJob::Base
         item.icon           = json['displayProperties']['icon']
         item.tier_type      = json['inventory']['tierType']
         item.tier_type_name = json['inventory']['tierTypeName']
-        item.item_type_name = json['itemTypeDisplayName'].pluralize
-        item.item_type      = json['itemTypeDisplayName'].pluralize.parameterize
+        item.item_type_name = json['itemTypeDisplayName'].to_s.pluralize
+        item.item_type      = json['itemTypeDisplayName'].to_s.pluralize.parameterize
         item.save!
 
         values = json.dig('stats', 'stats') || []
