@@ -1,27 +1,8 @@
 module WeaponsHelper
   def weapon_type_options(selected)
-    options = {
-      'Primary' => [
-        ['Auto Rifles',  :auto_rifles ],
-        ['Hand Cannons', :hand_cannons],
-        ['Pulse Rifles', :pulse_rifles],
-        ['Scout Rifles', :scout_rifles],
-      ],
+    options = Item.pluck(:item_type_name, :item_type).uniq.sort
 
-      'Secondary' => [
-        ['Fusion Rifles', :fusion_rifles],
-        ['Shotguns',      :shotguns     ],
-        ['Sidearms',      :sidearms     ],
-        ['Sniper Rifles', :sniper_rifles],
-      ],
-
-      'Heavy' => [
-        ['Machine Guns',     :machine_guns    ],
-        ['Rocket Launchers', :rocket_launchers],
-      ],
-    }
-
-    grouped_options_for_select options, selected
+    options_for_select options, selected
   end
 
   def weapon_value_options
@@ -41,8 +22,8 @@ module WeaponsHelper
   end
 
   def cache_key_for_weapons
-    count = Weapon.count
-    max   = Weapon.maximum(:updated_at).try(:utc).try(:to_s, :number)
+    count = Item.count
+    max   = Item.maximum(:updated_at).try(:utc).try(:to_s, :number)
 
     "weapons/all-#{count}-#{max}"
   end
@@ -54,14 +35,14 @@ module WeaponsHelper
   end
 
   def weapon_image(weapon)
-    image_path "weapons/#{File.basename(weapon.icon)}"
+    image_tag "https://bungie.net/#{weapon.icon}"
   end
 
-  def stat_row(weapon, stat, options = {})
+  def stat_row(stat, options = {})
     data = {
-      default: weapon.send(stat),
-      min: weapon.send("#{stat}_min"),
-      max: weapon.send("#{stat}_max"),
+      default: stat.value,
+      min: stat.minimum_value,
+      max: stat.maximum_value,
     }
 
     default_options = {
@@ -69,6 +50,6 @@ module WeaponsHelper
       data: data,
     }.merge options
 
-    content_tag :td, weapon.send(stat), default_options
+    content_tag :td, stat.value, default_options
   end
 end
