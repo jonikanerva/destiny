@@ -1,0 +1,285 @@
+[
+  {
+    "hash": 2223994109,
+    "name": "Aspect Energy Capacity",
+    "description": "The energy used by your build to activate fragments."
+  },
+  { "hash": 2299076437, "name": "", "description": "" },
+  { "hash": 2341766298, "name": "Handicap", "description": "Handicap" },
+  { "hash": 2399985800, "name": "Void Cost", "description": "Void Armor Mod" },
+  {
+    "hash": 2523465841,
+    "name": "Velocity",
+    "description": "Increases the speed of projectiles fired by this weapon."
+  },
+  {
+    "hash": 2715839340,
+    "name": "Recoil Direction",
+    "description": "The weapon's tendency to move while firing."
+  },
+  {
+    "hash": 2733264856,
+    "name": "Score Multiplier",
+    "description": "Amount by which the current handicap is increasing score values."
+  },
+  {
+    "hash": 2762071195,
+    "name": "Guard Efficiency",
+    "description": "Reduces the amount of energy required to guard an attack."
+  },
+  {
+    "hash": 2837207746,
+    "name": "Swing Speed",
+    "description": "The speed at which you can launch attacks."
+  },
+  {
+    "hash": 2961396640,
+    "name": "Charge Time",
+    "description": "The time in milliseconds before a weapon fires."
+  },
+  {
+    "hash": 2996146975,
+    "name": "Mobility",
+    "description": "Increases your movement speed and maximum jump height."
+  },
+  {
+    "hash": 3017642079,
+    "name": "Boost",
+    "description": "How much speed can be gained from boosting."
+  },
+  {
+    "hash": 3022301683,
+    "name": "Charge Rate",
+    "description": "How fast this weapon recharges its energy."
+  },
+  { "hash": 3123546339, "name": "", "description": "" },
+  {
+    "hash": 3289069874,
+    "name": "Power Bonus",
+    "description": "The Seasonal Artifact increases your Power, increasing the damage your abilities deal against higher-level enemies."
+  },
+  { "hash": 3291498656, "name": "", "description": "" },
+  { "hash": 3291498658, "name": "", "description": "" },
+  { "hash": 3291498659, "name": "", "description": "" },
+  { "hash": 3291498661, "name": "", "description": "" },
+  {
+    "hash": 3344745325,
+    "name": "Solar Cost",
+    "description": "Solar Armor Mod"
+  },
+  { "hash": 3409715177, "name": "", "description": "" },
+  {
+    "hash": 3555269338,
+    "name": "Zoom",
+    "description": "How much the weapon's scope can zoom in on targets."
+  },
+  {
+    "hash": 3578062600,
+    "name": "Any Energy Type Cost",
+    "description": "Any Energy Type"
+  },
+  {
+    "hash": 3597844532,
+    "name": "Precision Damage",
+    "description": "Damage when striking a target's weak points."
+  },
+  {
+    "hash": 3614673599,
+    "name": "Blast Radius",
+    "description": "Increases the explosion radius of this weapon."
+  },
+  {
+    "hash": 3625423501,
+    "name": "Arc Energy Capacity",
+    "description": "This armor cannot accept mods that require Void or Solar energy."
+  },
+  {
+    "hash": 3736848092,
+    "name": "Guard Endurance",
+    "description": "How long you can maintain your guard with this weapon."
+  },
+  { "hash": 3779394102, "name": "Arc Cost", "description": "Arc Armor Mod" },
+  { "hash": 3784226438, "name": "", "description": "" },
+  {
+    "hash": 3871231066,
+    "name": "Magazine",
+    "description": "The number of shots which can be fired before reloading."
+  },
+  {
+    "hash": 3897883278,
+    "name": "Defense",
+    "description": "Reduces incoming damage from your enemies."
+  },
+  {
+    "hash": 3907551967,
+    "name": "Move Speed",
+    "description": "Speed while carrying the weapon."
+  },
+  {
+    "hash": 3950461274,
+    "name": "Stasis Cost",
+    "description": "Stasis Armor Mod"
+  },
+  {
+    "hash": 3988418950,
+    "name": "Time to Aim Down Sights",
+    "description": "Speed while aiming down the sights."
+  },
+  {
+    "hash": 4043523819,
+    "name": "Impact",
+    "description": "Increases the damage inflicted by each round."
+  },
+  {
+    "hash": 4188031367,
+    "name": "Reload Speed",
+    "description": "The time it takes to reload this weapon."
+  },
+  {
+    "hash": 4244567218,
+    "name": "Strength",
+    "description": "Strength decreases the cooldown time of your melee ability, allowing you to use it more often."
+  },
+  {
+    "hash": 4284893193,
+    "name": "Rounds Per Minute",
+    "description": "The number of shots per minute this weapon can fire."
+  },
+  {
+    "hash": 16120457,
+    "name": "Void Energy Capacity",
+    "description": "This armor cannot accept mods that require Arc or Solar energy."
+  },
+  {
+    "hash": 119204074,
+    "name": "Fragment Cost",
+    "description": "The energy used by your build to activate fragments."
+  },
+  {
+    "hash": 144602215,
+    "name": "Intellect",
+    "description": "Intellect decreases the cooldown of your Super ability, allowing you to use it more often."
+  },
+  {
+    "hash": 155624089,
+    "name": "Stability",
+    "description": "How much or little recoil you will experience while firing the weapon."
+  },
+  {
+    "hash": 209426660,
+    "name": "Guard Resistance",
+    "description": "Damage reduction while guarding with this weapon against most attacks."
+  },
+  {
+    "hash": 237763788,
+    "name": "Ghost Energy Capacity",
+    "description": "This Ghost can accept any Ghost mods."
+  },
+  {
+    "hash": 360359141,
+    "name": "Durability",
+    "description": "Higher Durability allows your vehicle to take more damage before failing."
+  },
+  {
+    "hash": 392767087,
+    "name": "Resilience",
+    "description": "Increases the amount of damage you can take before dying."
+  },
+  {
+    "hash": 447667954,
+    "name": "Draw Time",
+    "description": "The time in milliseconds it takes to draw an arrow. Release an arrow when fully drawn for maximum damage and speed."
+  },
+  {
+    "hash": 514071887,
+    "name": "Mod Cost",
+    "description": "This Ghost can accept any Ghost mods."
+  },
+  {
+    "hash": 925767036,
+    "name": "Ammo Capacity",
+    "description": "How many powerful attacks this weapon can launch before ammo is depleted"
+  },
+  {
+    "hash": 943549884,
+    "name": "Handling",
+    "description": "The speed with which the weapon can be readied and aimed."
+  },
+  { "hash": 953546184, "name": "", "description": "" },
+  {
+    "hash": 998798867,
+    "name": "Stasis Cost",
+    "description": "Stasis Armor Mod"
+  },
+  {
+    "hash": 1240592695,
+    "name": "Range",
+    "description": "Increases the effective range of this weapon."
+  },
+  {
+    "hash": 1345609583,
+    "name": "Aim Assistance",
+    "description": "The weapon's ability to augment your aim."
+  },
+  {
+    "hash": 1480404414,
+    "name": "Attack",
+    "description": "Higher Attack allows your weapons to damage higher-level opponents."
+  },
+  {
+    "hash": 1501155019,
+    "name": "Speed",
+    "description": "How fast this vehicle travels over land."
+  },
+  {
+    "hash": 1546607977,
+    "name": "Heroic Resistance",
+    "description": "Provides additional damage resistance while your Super is active."
+  },
+  {
+    "hash": 1546607978,
+    "name": "Arc Damage Resistance",
+    "description": "Reduces all incoming damage while your Super is active. Reduces incoming Arc damage from non-Guardian enemies."
+  },
+  {
+    "hash": 1546607979,
+    "name": "Solar Damage Resistance",
+    "description": "Reduces all incoming damage while your Super is active. Reduces incoming Solar damage from non-Guardian enemies."
+  },
+  {
+    "hash": 1546607980,
+    "name": "Void Damage Resistance",
+    "description": "Reduces all incoming damage while your Super is active. Reduces incoming Void damage from non-Guardian enemies."
+  },
+  {
+    "hash": 1591432999,
+    "name": "Accuracy",
+    "description": "How well shots fired by this weapon hit their target."
+  },
+  {
+    "hash": 1735777505,
+    "name": "Discipline",
+    "description": "Discipline decreases the cooldown time of your grenades, allowing you to use them more often."
+  },
+  { "hash": 1885944937, "name": "", "description": "" },
+  {
+    "hash": 1931675084,
+    "name": "Inventory Size",
+    "description": "How much ammo a player can hold in reserve."
+  },
+  {
+    "hash": 1935470627,
+    "name": "Power",
+    "description": "Raising your Power increases the damage your abilities deal against higher-level enemies."
+  },
+  {
+    "hash": 1943323491,
+    "name": "Recovery",
+    "description": "Increases the speed at which you regain lost health."
+  },
+  {
+    "hash": 2018193158,
+    "name": "Solar Energy Capacity",
+    "description": "This armor cannot accept mods that require Void or Arc energy."
+  }
+]

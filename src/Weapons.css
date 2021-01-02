@@ -1,0 +1,67 @@
+.center {
+  margin: auto;
+  cursor: pointer;
+}
+
+.image {
+  width: 70px;
+  padding: 0;
+  margin: 0;
+}
+
+tr:hover {
+  background-color: rgb(175, 175, 211);
+}
+
+td,
+th {
+  padding: 5px;
+  text-align: left;
+}
+
+td.name,
+th.name {
+  min-width: 250px;
+  max-width: 250px;
+  width: 250px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+td.stat,
+th.stat {
+  max-width: 75px;
+  min-width: 75px;
+  width: 75px;
+  text-align: right;
+}
+
+.even {
+  background-color: #fff;
+}
+
+.odd {
+  background-color: #ddd;
+}
+
+.Uncommon {
+  background-color: #5cb370;
+}
+
+.Exotic {
+  background-color: #fdd944;
+}
+
+.Common {
+  background-color: #ddd6cd;
+}
+
+.Legendary {
+  background-color: #a465ca;
+}
+
+.Rare {
+  background-color: #6a9bd4;
+}

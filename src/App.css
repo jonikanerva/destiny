@@ -1,0 +1,24 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.appContent {
+  margin: 50px;
+}
+
+.weaponSelect {
+  margin: auto;
+  width: 400px;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.weaponSelect label {
+  padding: 10px;
+}
