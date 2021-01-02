@@ -2,7 +2,7 @@ import 'react-tabulator/lib/styles.css'
 import 'react-tabulator/css/bootstrap/tabulator_bootstrap.min.css'
 import './Weapons.css'
 
-import React, { useMemo } from 'react'
+import React from 'react'
 import { ReactTabulator } from 'react-tabulator'
 
 import { Stats, Weapons, WeaponStats } from '../data/processManifest'
