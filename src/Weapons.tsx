@@ -1,6 +1,9 @@
+import 'react-tabulator/lib/styles.css'
+import 'react-tabulator/css/bootstrap/tabulator_bootstrap.min.css'
 import './Weapons.css'
 
 import React, { useMemo } from 'react'
+import { ReactTabulator } from 'react-tabulator'
 
 import { Stats, Weapons, WeaponStats } from '../data/processManifest'
 
@@ -48,84 +51,55 @@ const prepareWeaponsData = (
   )
   const statColumns = weaponTypeStats(selectedWeapons, stats)
   const statHeaders = statColumns.map((stat) => ({
-    name: stat.name,
-    type: 'number',
+    title: stat.name,
+    field: `stat${stat.hash}`,
+    sorter: 'numeric',
   }))
-  const headers = [
-    { name: 'image', type: 'image' },
-    { name: 'name', type: 'text' },
-    { name: 'tier', type: 'text' },
+  const columns = [
+    {
+      title: 'Image',
+      field: 'icon',
+      formatter: 'image',
+      formatterParams: {
+        height: '70px',
+        width: '70px',
+      },
+    },
+    { title: 'Name', field: 'name', sorter: 'alphanum', width: 250 },
+    { title: 'Tier', field: 'tier', sorter: 'alphanum' },
     ...statHeaders,
   ]
 
   const data = selectedWeapons.map((weapon) => {
-    const statData = statColumns.map((stat) => ({
-      [stat.hash]: getStatForWeapon(stat.hash, weapon.stats),
-    }))
+    const weaponData: any = {
+      id: weapon.hash,
+      icon: `https://bungie.net${weapon.icon}`,
+      name: weapon.name,
+      tier: weapon.tierTypeName,
+    }
+    statColumns.forEach((stat) => {
+      weaponData[`stat${stat.hash}`] = getStatForWeapon(stat.hash, weapon.stats)
+    })
 
-    return [
-      { icon: `https://bungie.net${weapon.icon}` },
-      { name: weapon.name },
-      { tier: weapon.tierTypeName },
-      ...statData,
-    ]
+    return weaponData
   })
 
-  return { headers, data }
+  return { columns, data }
 }
 
 const Weapons: React.FC<WeaponProps> = ({ weapons, weaponType, stats }) => {
-  const selectedWeapons = weapons.filter(
-    (weapon) => weapon.typeName === weaponType
-  )
-  const statColumns = weaponTypeStats(selectedWeapons, stats)
-
-  const { headers, data } = useMemo(
+  const { columns, data } = useMemo(
     () => prepareWeaponsData(weapons, stats, weaponType),
     [weapons, stats, weaponType]
   )
 
-  console.log('tällänen', headers, data)
-
   return (
-    <div>
-      <table className="center">
-        <thead>
-          <tr>
-            <th></th>
-            <th className="name">Name</th>
-            <th className="tier">Tier</th>
-            {statColumns.map((stat, key) => (
-              <th key={key} className="stat">
-                {stat.name}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {selectedWeapons.map((weapon, key) => (
-            <tr
-              key={`${weaponType}${key}`}
-              className={key % 2 ? 'even' : 'odd'}
-            >
-              <td className="image">
-                <img
-                  src={`https://bungie.net${weapon.icon}`}
-                  className="image"
-                />
-              </td>
-              <td className="name">{weapon.name}</td>
-              <td className={weapon.tierTypeName}>{weapon.tierTypeName}</td>
-              {statColumns.map((stat, key) => (
-                <td key={key} className="stat">
-                  {getStatForWeapon(stat.hash, weapon.stats)}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <ReactTabulator
+      data={data}
+      columns={columns}
+      tooltips={true}
+      layout="fitDataFill"
+    />
   )
 }
 
