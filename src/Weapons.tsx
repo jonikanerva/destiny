@@ -1,6 +1,6 @@
 import './Weapons.css'
 
-import React from 'react'
+import React, { useMemo } from 'react'
 
 import { Stats, Weapons, WeaponStats } from '../data/processManifest'
 
@@ -38,11 +38,54 @@ const getStatForWeapon = (
   return stat[0] ? stat[0].value : undefined
 }
 
+const prepareWeaponsData = (
+  weapons: Weapons[],
+  stats: Map<number, Stats>,
+  weaponType: string
+) => {
+  const selectedWeapons = weapons.filter(
+    (weapon) => weapon.typeName === weaponType
+  )
+  const statColumns = weaponTypeStats(selectedWeapons, stats)
+  const statHeaders = statColumns.map((stat) => ({
+    name: stat.name,
+    type: 'number',
+  }))
+  const headers = [
+    { name: 'image', type: 'image' },
+    { name: 'name', type: 'text' },
+    { name: 'tier', type: 'text' },
+    ...statHeaders,
+  ]
+
+  const data = selectedWeapons.map((weapon) => {
+    const statData = statColumns.map((stat) => ({
+      [stat.hash]: getStatForWeapon(stat.hash, weapon.stats),
+    }))
+
+    return [
+      { icon: `https://bungie.net${weapon.icon}` },
+      { name: weapon.name },
+      { tier: weapon.tierTypeName },
+      ...statData,
+    ]
+  })
+
+  return { headers, data }
+}
+
 const Weapons: React.FC<WeaponProps> = ({ weapons, weaponType, stats }) => {
   const selectedWeapons = weapons.filter(
     (weapon) => weapon.typeName === weaponType
   )
   const statColumns = weaponTypeStats(selectedWeapons, stats)
+
+  const { headers, data } = useMemo(
+    () => prepareWeaponsData(weapons, stats, weaponType),
+    [weapons, stats, weaponType]
+  )
+
+  console.log('tällänen', headers, data)
 
   return (
     <div>
