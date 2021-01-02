@@ -53,7 +53,7 @@ const prepareWeaponsData = (
   const statHeaders = statColumns.map((stat) => ({
     title: stat.name,
     field: `stat${stat.hash}`,
-    sorter: 'numeric',
+    sorter: 'number',
   }))
   const columns = [
     {
@@ -65,33 +65,33 @@ const prepareWeaponsData = (
         width: '70px',
       },
     },
-    { title: 'Name', field: 'name', sorter: 'alphanum', width: 250 },
-    { title: 'Tier', field: 'tier', sorter: 'alphanum' },
+    { title: 'Name', field: 'name', sorter: 'string', width: 250 },
+    { title: 'Tier', field: 'tier', sorter: 'string' },
     ...statHeaders,
   ]
 
   const data = selectedWeapons.map((weapon) => {
-    const weaponData: any = {
+    const weaponData = {
       id: weapon.hash,
       icon: `https://bungie.net${weapon.icon}`,
       name: weapon.name,
       tier: weapon.tierTypeName,
     }
-    statColumns.forEach((stat) => {
-      weaponData[`stat${stat.hash}`] = getStatForWeapon(stat.hash, weapon.stats)
-    })
+    const statsData: { [key: string]: number } = Object.assign(
+      {},
+      ...statColumns.map((stat) => ({
+        [`stat${stat.hash}`]: getStatForWeapon(stat.hash, weapon.stats),
+      }))
+    )
 
-    return weaponData
+    return { ...weaponData, ...statsData }
   })
 
   return { columns, data }
 }
 
 const Weapons: React.FC<WeaponProps> = ({ weapons, weaponType, stats }) => {
-  const { columns, data } = useMemo(
-    () => prepareWeaponsData(weapons, stats, weaponType),
-    [weapons, stats, weaponType]
-  )
+  const { columns, data } = prepareWeaponsData(weapons, stats, weaponType)
 
   return (
     <ReactTabulator
