@@ -29,20 +29,18 @@ th {
 
 td.name,
 th.name {
-  min-width: 250px;
-  max-width: 250px;
-  width: 250px;
   text-align: left;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+td a {
+  color: black;
+}
+
 td.stat,
 th.stat {
-  max-width: 75px;
-  min-width: 75px;
-  width: 75px;
   text-align: right;
 }
 

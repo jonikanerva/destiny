@@ -42,50 +42,56 @@ const Weapons: React.FC<WeaponProps> = ({ weaponData, weaponType }) => {
   }
 
   return (
-    <div>
-      <table className="center">
-        <thead>
-          <tr>
-            {columns.map((header: any, key: number) => {
-              const onClick = header.sortable
-                ? () => sortClick(header.field)
-                : undefined
-              return (
-                <th key={key} onClick={onClick}>
-                  {header.title}
-                </th>
-              )
-            })}
-          </tr>
-        </thead>
-        <tbody>
-          {data
-            .sort(sortNumeric(sort, sortDirection))
-            .map((weapon: any, key: number) => (
-              <tr
-                key={`${weapon.type}${key}`}
-                className={key % 2 ? 'even' : 'odd'}
-              >
-                {columns.map((column: any, key: number) => {
-                  if (column.field === 'icon') {
-                    return (
-                      <td key={key} className="image">
-                        <img height={70} src={weapon[column.field]} />
-                      </td>
-                    )
-                  }
-
+    <table className="center">
+      <thead>
+        <tr>
+          {columns.map((header: any, key: number) => {
+            const onClick = header.sortable
+              ? () => sortClick(header.field)
+              : undefined
+            return (
+              <th key={key} onClick={onClick}>
+                {header.title}
+              </th>
+            )
+          })}
+        </tr>
+      </thead>
+      <tbody>
+        {data
+          .sort(sortNumeric(sort, sortDirection))
+          .map((weapon: any, key: number) => (
+            <tr
+              key={`${weapon.type}${key}`}
+              className={key % 2 ? 'even' : 'odd'}
+            >
+              {columns.map((column: any, key: number) => {
+                if (column.field === 'icon') {
                   return (
-                    <td key={key} width={column.width}>
-                      {weapon[column.field]}
+                    <td key={key} className="image">
+                      <img height={70} src={weapon[column.field]} />
                     </td>
                   )
-                })}
-              </tr>
-            ))}
-        </tbody>
-      </table>
-    </div>
+                } else if (column.field === 'name') {
+                  return (
+                    <td key={key} width={column.width} className="name">
+                      <a href={`https://d2gunsmith.com/w/${weapon.id}`}>
+                        {weapon[column.field]}
+                      </a>
+                    </td>
+                  )
+                }
+
+                return (
+                  <td key={key} width={column.width} className="stat">
+                    {weapon[column.field]}
+                  </td>
+                )
+              })}
+            </tr>
+          ))}
+      </tbody>
+    </table>
   )
 }
 
