@@ -80,6 +80,7 @@ const prepareWeaponsData = (
     title: stat.name,
     field: `stat${stat.hash}`,
     width: 50,
+    sortable: true,
   }))
   const columns = [
     { title: '', field: 'icon' },

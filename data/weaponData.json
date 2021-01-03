@@ -4,17 +4,72 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Range", "field": "stat1240592695", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 },
-      { "title": "Rounds Per Minute", "field": "stat4284893193", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Range",
+        "field": "stat1240592695",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Rounds Per Minute",
+        "field": "stat4284893193",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -1104,17 +1159,72 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Draw Time", "field": "stat447667954", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Accuracy", "field": "stat1591432999", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Charge Time", "field": "stat2961396640", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Draw Time",
+        "field": "stat447667954",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Accuracy",
+        "field": "stat1591432999",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Charge Time",
+        "field": "stat2961396640",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -1394,17 +1504,72 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Range", "field": "stat1240592695", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Charge Time", "field": "stat2961396640", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Range",
+        "field": "stat1240592695",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Charge Time",
+        "field": "stat2961396640",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -2062,18 +2227,78 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Velocity", "field": "stat2523465841", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Blast Radius", "field": "stat3614673599", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 },
-      { "title": "Rounds Per Minute", "field": "stat4284893193", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Velocity",
+        "field": "stat2523465841",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Blast Radius",
+        "field": "stat3614673599",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Rounds Per Minute",
+        "field": "stat4284893193",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -2881,17 +3106,72 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Range", "field": "stat1240592695", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 },
-      { "title": "Rounds Per Minute", "field": "stat4284893193", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Range",
+        "field": "stat1240592695",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Rounds Per Minute",
+        "field": "stat4284893193",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -4125,17 +4405,72 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Range", "field": "stat1240592695", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Charge Time", "field": "stat2961396640", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Range",
+        "field": "stat1240592695",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Charge Time",
+        "field": "stat2961396640",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -4343,17 +4678,72 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Range", "field": "stat1240592695", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 },
-      { "title": "Rounds Per Minute", "field": "stat4284893193", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Range",
+        "field": "stat1240592695",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Rounds Per Minute",
+        "field": "stat4284893193",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -4615,19 +5005,84 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Range", "field": "stat1240592695", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 },
-      { "title": "Rounds Per Minute", "field": "stat4284893193", "width": 50 },
-      { "title": "Velocity", "field": "stat2523465841", "width": 50 },
-      { "title": "Blast Radius", "field": "stat3614673599", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Range",
+        "field": "stat1240592695",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Rounds Per Minute",
+        "field": "stat4284893193",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Velocity",
+        "field": "stat2523465841",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Blast Radius",
+        "field": "stat3614673599",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -5737,17 +6192,72 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Velocity", "field": "stat2523465841", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Blast Radius", "field": "stat3614673599", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 },
-      { "title": "Rounds Per Minute", "field": "stat4284893193", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Velocity",
+        "field": "stat2523465841",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Blast Radius",
+        "field": "stat3614673599",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Rounds Per Minute",
+        "field": "stat4284893193",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -6423,17 +6933,72 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Range", "field": "stat1240592695", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 },
-      { "title": "Rounds Per Minute", "field": "stat4284893193", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Range",
+        "field": "stat1240592695",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Rounds Per Minute",
+        "field": "stat4284893193",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -7451,17 +8016,72 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Range", "field": "stat1240592695", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 },
-      { "title": "Rounds Per Minute", "field": "stat4284893193", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Range",
+        "field": "stat1240592695",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Rounds Per Minute",
+        "field": "stat4284893193",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -8461,19 +9081,84 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Range", "field": "stat1240592695", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 },
-      { "title": "Rounds Per Minute", "field": "stat4284893193", "width": 50 },
-      { "title": "Charge Time", "field": "stat2961396640", "width": 50 },
-      { "title": "Velocity", "field": "stat2523465841", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Range",
+        "field": "stat1240592695",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Rounds Per Minute",
+        "field": "stat4284893193",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Charge Time",
+        "field": "stat2961396640",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Velocity",
+        "field": "stat2523465841",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -9403,17 +10088,72 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Range", "field": "stat1240592695", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 },
-      { "title": "Rounds Per Minute", "field": "stat4284893193", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Range",
+        "field": "stat1240592695",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Rounds Per Minute",
+        "field": "stat4284893193",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -10395,17 +11135,72 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Range", "field": "stat1240592695", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 },
-      { "title": "Rounds Per Minute", "field": "stat4284893193", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Range",
+        "field": "stat1240592695",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Rounds Per Minute",
+        "field": "stat4284893193",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -11297,17 +12092,72 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Guard Resistance", "field": "stat209426660", "width": 50 },
-      { "title": "Ammo Capacity", "field": "stat925767036", "width": 50 },
-      { "title": "Range", "field": "stat1240592695", "width": 50 },
-      { "title": "Guard Efficiency", "field": "stat2762071195", "width": 50 },
-      { "title": "Swing Speed", "field": "stat2837207746", "width": 50 },
-      { "title": "Charge Time", "field": "stat2961396640", "width": 50 },
-      { "title": "Charge Rate", "field": "stat3022301683", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 }
+      {
+        "title": "Guard Resistance",
+        "field": "stat209426660",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Ammo Capacity",
+        "field": "stat925767036",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Range",
+        "field": "stat1240592695",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Guard Efficiency",
+        "field": "stat2762071195",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Swing Speed",
+        "field": "stat2837207746",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Charge Time",
+        "field": "stat2961396640",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Charge Rate",
+        "field": "stat3022301683",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
@@ -11857,17 +12707,72 @@
     "columns": [
       { "title": "", "field": "icon" },
       { "title": "Name", "field": "name" },
-      { "title": "Stability", "field": "stat155624089", "width": 50 },
-      { "title": "Handling", "field": "stat943549884", "width": 50 },
-      { "title": "Range", "field": "stat1240592695", "width": 50 },
-      { "title": "Aim Assistance", "field": "stat1345609583", "width": 50 },
-      { "title": "Inventory Size", "field": "stat1931675084", "width": 50 },
-      { "title": "Recoil Direction", "field": "stat2715839340", "width": 50 },
-      { "title": "Zoom", "field": "stat3555269338", "width": 50 },
-      { "title": "Magazine", "field": "stat3871231066", "width": 50 },
-      { "title": "Impact", "field": "stat4043523819", "width": 50 },
-      { "title": "Reload Speed", "field": "stat4188031367", "width": 50 },
-      { "title": "Rounds Per Minute", "field": "stat4284893193", "width": 50 }
+      {
+        "title": "Stability",
+        "field": "stat155624089",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Handling",
+        "field": "stat943549884",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Range",
+        "field": "stat1240592695",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Aim Assistance",
+        "field": "stat1345609583",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Inventory Size",
+        "field": "stat1931675084",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Recoil Direction",
+        "field": "stat2715839340",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Zoom",
+        "field": "stat3555269338",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Magazine",
+        "field": "stat3871231066",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Impact",
+        "field": "stat4043523819",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Reload Speed",
+        "field": "stat4188031367",
+        "width": 50,
+        "sortable": true
+      },
+      {
+        "title": "Rounds Per Minute",
+        "field": "stat4284893193",
+        "width": 50,
+        "sortable": true
+      }
     ],
     "data": [
       {
