@@ -8,7 +8,6 @@ import Weapons from './Weapons'
 const weaponTypes = weaponData.map((weapon) => weapon.weaponType)
 
 export type WeaponData = typeof weaponData
-export type WeaponType = typeof weaponTypes[number]
 
 const App: React.FC = () => {
   const [weaponType, setWeaponType] = useState<string>(weaponTypes[0])

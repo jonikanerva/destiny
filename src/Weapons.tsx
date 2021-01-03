@@ -1,20 +1,22 @@
 import './Weapons.css'
 
 import React from 'react'
-import { WeaponData, WeaponType } from './App'
+import { WeaponData } from './App'
 
 interface WeaponProps {
   weaponData: WeaponData
-  weaponType: WeaponType
+  weaponType: string
 }
-const pickWeapon = (weapons: WeaponData, type: WeaponType) => {
-  const picked = weapons.filter((weapon) => weapon.weaponType === type)
 
-  return picked[0] || []
-}
+const pickWeapon = (weapons: WeaponData, type: string) =>
+  weapons.filter((weapon) => weapon.weaponType === type)[0]
 
 const Weapons: React.FC<WeaponProps> = ({ weaponData, weaponType }) => {
   const { columns, data } = pickWeapon(weaponData, weaponType)
+
+  if (columns === undefined || data === undefined) {
+    return <div>No data..</div>
+  }
 
   return (
     <div>
