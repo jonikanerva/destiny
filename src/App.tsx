@@ -2,19 +2,13 @@ import './App.css'
 
 import React, { useState } from 'react'
 
-import { Stats } from '../data/processManifest'
-import statsJson from '../data/stats.json'
-import weapons from '../data/weapons.json'
+import weaponData from '../data/weaponData.json'
 import Weapons from './Weapons'
 
-const stats = new Map<number, Stats>()
-const weaponTypes = [
-  ...new Set(weapons.map((weapon) => weapon.typeName)),
-].sort()
+const weaponTypes = weaponData.map((weapon) => weapon.weaponType)
 
-statsJson.forEach((stat) => {
-  stats.set(stat.hash, stat)
-})
+export type WeaponData = typeof weaponData
+export type WeaponType = typeof weaponTypes[number]
 
 const App: React.FC = () => {
   const [weaponType, setWeaponType] = useState<string>(weaponTypes[0])
@@ -34,7 +28,7 @@ const App: React.FC = () => {
           ))}
         </select>
       </div>
-      <Weapons weapons={weapons} weaponType={weaponType} stats={stats} />
+      <Weapons weaponData={weaponData} weaponType={weaponType} />
     </div>
   )
 }
