@@ -10,13 +10,13 @@ import { promises as fs } from 'fs'
 // unzip database.zip
 // rename to database.db
 
-export interface Stats {
+interface Stats {
   hash: number
   name: string
   description: string
 }
 
-export interface WeaponStats {
+interface WeaponStats {
   statHash: number
   value: number
   minimum: number
@@ -24,7 +24,7 @@ export interface WeaponStats {
   displayMaximum: number
 }
 
-export interface Weapons {
+interface Weapons {
   hash: number
   name: string
   description: string
@@ -42,50 +42,154 @@ const dbConfig = {
   driver: sqlite3.Database,
 }
 
-open(dbConfig)
-  .then((db) => db.all('select json from DestinyStatDefinition'))
-  .then((result) =>
-    result.map((row) => {
-      const stat = JSON.parse(row.json)
+const weaponTypeStats = (
+  weapons: Weapons[],
+  stats: Map<number, Stats>
+): Stats[] => {
+  const statColumns = new Map<number, Stats>()
 
-      return {
-        hash: stat?.hash,
-        name: stat?.displayProperties?.name,
-        description: stat?.displayProperties?.description,
+  weapons.forEach((weapon) =>
+    weapon.stats.forEach((stat) => {
+      const value = stats.get(stat.statHash)
+
+      if (value && value.name !== '') {
+        statColumns.set(stat.statHash, value)
       }
     })
   )
-  .then((stats: Stats[]) =>
-    fs.writeFile('./data/stats.json', JSON.stringify(stats))
+
+  return [...statColumns.values()]
+}
+
+const getStatForWeapon = (statHash: number, stats: WeaponStats[]): number => {
+  const stat = stats.filter((stat) => stat.statHash === statHash)
+
+  return stat[0] ? stat[0].value : 0
+}
+
+const prepareWeaponsData = (
+  weapons: Weapons[],
+  stats: Map<number, Stats>,
+  weaponType: string
+) => {
+  const selectedWeapons = weapons.filter(
+    (weapon) => weapon.typeName === weaponType
   )
-  .catch((error) => console.error(error))
+  const statColumns = weaponTypeStats(selectedWeapons, stats)
+  const statHeaders = statColumns.map((stat) => ({
+    title: stat.name,
+    field: `stat${stat.hash}`,
+    width: 50,
+  }))
+  const columns = [
+    { title: '', field: 'icon' },
+    { title: 'Name', field: 'name', width: undefined },
+    ...statHeaders,
+  ]
 
-open(dbConfig)
-  .then((db) => db.all('select json from DestinyInventoryItemDefinition'))
-  .then((result) =>
-    result.map((row) => {
-      const item = JSON.parse(row.json)
-      const itemStats = item?.stats?.stats || {}
-      const stats: WeaponStats[] = Object.values(itemStats)
+  const data = selectedWeapons.map((weapon) => {
+    const weaponData = {
+      id: weapon.hash,
+      icon: `https://bungie.net${weapon.icon}`,
+      name: weapon.name,
+      tier: weapon.tierTypeName,
+      type: weapon.type,
+    }
+    const statsData: { [key: string]: number } = Object.assign(
+      {},
+      ...statColumns.map((stat) => ({
+        [`stat${stat.hash}`]: getStatForWeapon(stat.hash, weapon.stats),
+      }))
+    )
 
-      return {
-        hash: item.hash,
-        name: item?.displayProperties?.name,
-        description: item?.displayProperties?.description,
-        type: item?.itemType,
-        typeName: item?.itemTypeDisplayName,
-        icon: item?.displayProperties?.icon,
-        tierType: item?.inventory?.tierType,
-        tierTypeName: item?.inventory?.tierTypeName,
-        stats: stats.filter((stat) => stat?.value !== 0),
-      }
+    return { ...weaponData, ...statsData }
+  })
+
+  return { columns, data }
+}
+
+const getStats = () =>
+  open(dbConfig)
+    .then((db) => db.all('select json from DestinyStatDefinition'))
+    .then((result) =>
+      result.map((row) => {
+        const stat = JSON.parse(row.json)
+
+        return {
+          hash: stat?.hash,
+          name: stat?.displayProperties?.name,
+          description: stat?.displayProperties?.description,
+        }
+      })
+    )
+
+const getWeapons = () =>
+  open(dbConfig)
+    .then((db) => db.all('select json from DestinyInventoryItemDefinition'))
+    .then((result) =>
+      result.map((row) => {
+        const item = JSON.parse(row.json)
+        const itemStats = item?.stats?.stats || {}
+        const stats: WeaponStats[] = Object.values(itemStats)
+
+        return {
+          hash: item.hash,
+          name: item?.displayProperties?.name,
+          description: item?.displayProperties?.description,
+          type: item?.itemType,
+          typeName: item?.itemTypeDisplayName,
+          icon: item?.displayProperties?.icon,
+          tierType: item?.inventory?.tierType,
+          tierTypeName: item?.inventory?.tierTypeName,
+          stats: stats.filter((stat) => stat?.value !== 0),
+        }
+      })
+    )
+    .then((items: Weapons[]) => items.filter((item) => item?.type === 3))
+    .then((items: Weapons[]) =>
+      items.filter((item) => item?.tierType === 5 || item?.tierType === 6)
+    )
+
+const uniqueWeaponTypes = (weapons: Weapons[]): string[] =>
+  [...new Set(weapons.map((weapon) => weapon.typeName))].sort()
+
+const uniqueStats = (stats: Stats[]): Map<number, Stats> => {
+  const statsMap = new Map<number, Stats>()
+
+  stats.forEach((stat) => {
+    statsMap.set(stat.hash, stat)
+  })
+
+  return statsMap
+}
+
+const processManifest = () => {
+  console.log('Processing...')
+
+  return Promise.all([getStats(), getWeapons()])
+    .then(([stats, weapons]) => {
+      const weaponTypes = uniqueWeaponTypes(weapons)
+      const statsData = uniqueStats(stats)
+
+      return weaponTypes.map((weaponType) => {
+        const { columns, data } = prepareWeaponsData(
+          weapons,
+          statsData,
+          weaponType
+        )
+
+        return {
+          weaponType,
+          columns,
+          data,
+        }
+      })
     })
-  )
-  .then((items: Weapons[]) => items.filter((item) => item?.type === 3))
-  .then((items: Weapons[]) =>
-    items.filter((item) => item?.tierType === 5 || item?.tierType === 6)
-  )
-  .then((weapons) =>
-    fs.writeFile('./data/weapons.json', JSON.stringify(weapons))
-  )
-  .catch((error) => console.error(error))
+    .then((weaponData) =>
+      fs.writeFile('./data/weaponData.json', JSON.stringify(weaponData))
+    )
+    .then(() => console.log('Done, wrote ./data/weaponData.json'))
+    .catch((error) => console.error(error))
+}
+
+processManifest()
