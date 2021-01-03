@@ -77,11 +77,14 @@ open(dbConfig)
         icon: item?.displayProperties?.icon,
         tierType: item?.inventory?.tierType,
         tierTypeName: item?.inventory?.tierTypeName,
-        stats,
+        stats: stats.filter((stat) => stat?.value !== 0),
       }
     })
   )
   .then((items: Weapons[]) => items.filter((item) => item?.type === 3))
+  .then((items: Weapons[]) =>
+    items.filter((item) => item?.tierType === 5 || item?.tierType === 6)
+  )
   .then((weapons) =>
     fs.writeFile('./data/weapons.json', JSON.stringify(weapons))
   )
