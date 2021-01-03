@@ -1,9 +1,6 @@
-import 'react-tabulator/lib/styles.css'
-import 'react-tabulator/css/bootstrap/tabulator_bootstrap.min.css'
 import './Weapons.css'
 
 import React from 'react'
-import { ReactTabulator } from 'react-tabulator'
 
 import { Stats, Weapons, WeaponStats } from '../data/processManifest'
 
@@ -32,13 +29,10 @@ const weaponTypeStats = (
   return [...statColumns.values()]
 }
 
-const getStatForWeapon = (
-  statHash: number,
-  stats: WeaponStats[]
-): number | undefined => {
+const getStatForWeapon = (statHash: number, stats: WeaponStats[]): number => {
   const stat = stats.filter((stat) => stat.statHash === statHash)
 
-  return stat[0] ? stat[0].value : undefined
+  return stat[0] ? stat[0].value : 0
 }
 
 const prepareWeaponsData = (
@@ -53,20 +47,11 @@ const prepareWeaponsData = (
   const statHeaders = statColumns.map((stat) => ({
     title: stat.name,
     field: `stat${stat.hash}`,
-    sorter: 'number',
+    width: 50,
   }))
   const columns = [
-    {
-      title: 'Image',
-      field: 'icon',
-      formatter: 'image',
-      formatterParams: {
-        height: '70px',
-        width: '70px',
-      },
-    },
-    { title: 'Name', field: 'name', sorter: 'string', width: 250 },
-    { title: 'Tier', field: 'tier', sorter: 'string' },
+    { title: '', field: 'icon' },
+    { title: 'Name', field: 'name', width: undefined },
     ...statHeaders,
   ]
 
@@ -76,6 +61,7 @@ const prepareWeaponsData = (
       icon: `https://bungie.net${weapon.icon}`,
       name: weapon.name,
       tier: weapon.tierTypeName,
+      type: weapon.type,
     }
     const statsData: { [key: string]: number } = Object.assign(
       {},
@@ -90,16 +76,47 @@ const prepareWeaponsData = (
   return { columns, data }
 }
 
+const pick = (object: any, key: any): any => object[key]
+
 const Weapons: React.FC<WeaponProps> = ({ weapons, weaponType, stats }) => {
   const { columns, data } = prepareWeaponsData(weapons, stats, weaponType)
 
   return (
-    <ReactTabulator
-      data={data}
-      columns={columns}
-      tooltips={true}
-      layout="fitDataFill"
-    />
+    <div>
+      <table className="center">
+        <thead>
+          <tr>
+            {columns.map((header, key) => (
+              <th key={key}>{header.title}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((weapon, key) => (
+            <tr
+              key={`${weapon.type}${key}`}
+              className={key % 2 ? 'even' : 'odd'}
+            >
+              {columns.map((column, key) => {
+                if (column.field === 'icon') {
+                  return (
+                    <td key={key} className="image">
+                      <img height={70} src={pick(weapon, column.field)} />
+                    </td>
+                  )
+                }
+
+                return (
+                  <td key={key} width={column.width}>
+                    {pick(weapon, column.field)}
+                  </td>
+                )
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 }
 
