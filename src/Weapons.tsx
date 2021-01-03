@@ -8,7 +8,7 @@ interface WeaponProps {
   weaponType: string
 }
 
-const pickWeapon = (weapons: WeaponData, type: string) =>
+const pickWeapon = (weapons: WeaponData, type: string): Record<string, any> =>
   weapons.filter((weapon) => weapon.weaponType === type)[0]
 
 const Weapons: React.FC<WeaponProps> = ({ weaponData, weaponType }) => {
@@ -23,18 +23,18 @@ const Weapons: React.FC<WeaponProps> = ({ weaponData, weaponType }) => {
       <table className="center">
         <thead>
           <tr>
-            {columns.map((header, key) => (
+            {columns.map((header: any, key: number) => (
               <th key={key}>{header.title}</th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {data.map((weapon, key) => (
+          {data.map((weapon: any, key: number) => (
             <tr
               key={`${weapon.type}${key}`}
               className={key % 2 ? 'even' : 'odd'}
             >
-              {columns.map((column, key) => {
+              {columns.map((column: any, key: number) => {
                 if (column.field === 'icon') {
                   return (
                     <td key={key} className="image">
