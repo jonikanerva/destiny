@@ -9,6 +9,7 @@ import { promises as fs } from 'fs'
 //
 // unzip database.zip
 // rename to database.db
+// run ts-node data/processManifest.ts
 
 interface Stats {
   hash: number
