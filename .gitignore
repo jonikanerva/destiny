@@ -1,4 +1,6 @@
 .cache
+.env
+data/database.*
+data/json
 dist
 node_modules
-data/database.*
