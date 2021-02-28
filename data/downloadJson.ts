@@ -11,7 +11,9 @@ const getManifest = () =>
 const getContent = (path: string) => {
   console.log('Downloading: ', path)
 
-  return fetch(`https://www.bungie.net${path}`).then((res) => res.text())
+  return fetch(`https://www.bungie.net${path}`)
+    .then((res) => res.json())
+    .then((json) => JSON.stringify(json, null, 2))
 }
 
 const storeToFile = (filename: string, data: string): Promise<void> =>
