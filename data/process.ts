@@ -1,6 +1,11 @@
+import { promises as fs } from 'fs'
+
 import DestinyInventoryItemDefinition from './json/DestinyInventoryItemDefinition.json'
 import DestinyPlugSetDefinition from './json/DestinyPlugSetDefinition.json'
 import DestinyStatDefinition from './json/DestinyStatDefinition.json'
+
+const storeToFile = (filename: string, data: string): Promise<void> =>
+  fs.writeFile(`./data/${filename}.json`, data)
 
 const getDestinyInventoryItemDefinition = (hash: string) =>
   (DestinyInventoryItemDefinition as any)[hash]
@@ -48,21 +53,20 @@ const getPerkInfo = (perks?: { plugItemHash: number }[]) => {
 const getSockets = (item: any) => {
   const itemEntries = item?.sockets?.socketEntries || {}
   const entries = Object.values(itemEntries)
-  const masterworkHash = 2218962841
-  const trackerHash = 1282012138
-  const intrinsicHash = 3956125808
-  const weaponModHash = 711121010
-  const shaderHash = 1288200359
+  // const masterworkHash = 2218962841
+  // const trackerHash = 1282012138
+  // const intrinsicHash = 3956125808
+  // const weaponModHash = 711121010
+  // const shaderHash = 1288200359
 
   return entries
     .filter(
-      (entry: any) =>
-        entry?.socketTypeHash !== 0 &&
-        entry?.socketTypeHash !== intrinsicHash &&
-        entry?.socketTypeHash !== masterworkHash &&
-        entry?.socketTypeHash !== shaderHash &&
-        entry?.socketTypeHash !== trackerHash &&
-        entry?.socketTypeHash !== weaponModHash
+      (entry: any) => entry?.socketTypeHash !== 0
+      //     entry?.socketTypeHash !== intrinsicHash &&
+      //     entry?.socketTypeHash !== masterworkHash &&
+      //     entry?.socketTypeHash !== shaderHash &&
+      //     entry?.socketTypeHash !== trackerHash &&
+      //     entry?.socketTypeHash !== weaponModHash
     )
     .map((entry: any) => {
       const reusablePlugSet = getPlugSetDefinition(entry.reusablePlugSetHash)
@@ -74,6 +78,7 @@ const getSockets = (item: any) => {
 
       return {
         socketTypeHash: entry.socketTypeHash,
+        plugSources: entry.plugSources,
         intrinsicPerks: getPerkInfo(reusablePlugSet),
         randomPerks: getPerkInfo(randomizedPlugSet),
         curatedPerks: getPerkInfo(reusablePlugItems),
@@ -104,7 +109,7 @@ const getStats = (item: any) => {
 const getWeapon = (hash: number) => {
   const item = getDestinyInventoryItemDefinition(`${hash}`)
 
-  if (item === null) {
+  if (!item) {
     return 'not found'
   }
 
@@ -119,12 +124,15 @@ const getWeapon = (hash: number) => {
     tierTypeName: item?.inventory?.tierTypeName,
     stats: getStats(item),
     perks: getSockets(item),
+    masterwork: {}, // TODO
+    intrinsicTraits: {}, // TODO
+    mods: {}, // TODO
   }
 
   return weapon
 }
 
-const getWeapons = () => {
+const getWeapons = (): any => {
   const weaponType = 3
   const legendaryTier = 5
   const exoticTier = 6
@@ -139,4 +147,10 @@ const getWeapons = () => {
     .map((row: any) => getWeapon(row.hash))
 }
 
-console.log(JSON.stringify(getWeapons(), null, 2))
+console.log('starting...')
+
+storeToFile('weapons', JSON.stringify(getWeapons(), null, 2)).then(() =>
+  console.log('done')
+)
+
+// console.log(JSON.stringify(getWeapon(20935540), null, 2))
