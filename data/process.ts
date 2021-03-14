@@ -31,20 +31,15 @@ const getPerkInfo = (perks?: { plugItemHash: number }[]) => {
 
         return {
           statHash: definition?.hash,
-          name: definition?.displayProperties?.name,
-          description: definition?.displayProperties?.description,
           value: stat?.value,
           index: definition?.index,
         }
       })
       .sort((a: any, b: any) => a.index - b.index)
+      .map(({ statHash, value }: any) => ({ statHash, value }))
 
     return {
-      name: item?.displayProperties?.name,
-      description: item?.displayProperties?.description,
-      type: item?.itemType,
-      typeName: item?.itemTypeDisplayName,
-      icon: item?.displayProperties?.icon,
+      perkHash: hash,
       stats: investmentStats,
     }
   })
@@ -78,7 +73,6 @@ const getSockets = (item: any) => {
 
       return {
         socketTypeHash: entry.socketTypeHash,
-        plugSources: entry.plugSources,
         intrinsicPerks: getPerkInfo(reusablePlugSet),
         randomPerks: getPerkInfo(randomizedPlugSet),
         curatedPerks: getPerkInfo(reusablePlugItems),
@@ -97,13 +91,12 @@ const getStats = (item: any) => {
 
       return {
         statHash: definition?.hash,
-        name: definition?.displayProperties?.name,
-        description: definition?.displayProperties?.description,
         value: stat?.value,
         index: definition?.index,
       }
     })
     .sort((a: any, b: any) => a.index - b.index)
+    .map(({ statHash, value }: any) => ({ statHash, value }))
 }
 
 const getWeapon = (hash: number) => {
@@ -114,14 +107,7 @@ const getWeapon = (hash: number) => {
   }
 
   const weapon = {
-    itemhash: item.hash,
-    name: item?.displayProperties?.name,
-    description: item?.displayProperties?.description,
-    type: item?.itemType,
-    typeName: item?.itemTypeDisplayName,
-    icon: item?.displayProperties?.icon,
-    tierType: item?.inventory?.tierType,
-    tierTypeName: item?.inventory?.tierTypeName,
+    weaponHash: item.hash,
     stats: getStats(item),
     perks: getSockets(item),
     masterwork: {}, // TODO
@@ -149,7 +135,7 @@ const getWeapons = (): any => {
 
 console.log('starting...')
 
-storeToFile('weapons', JSON.stringify(getWeapons(), null, 2)).then(() =>
+storeToFile('weaponStats', JSON.stringify(getWeapons(), null, 2)).then(() =>
   console.log('done')
 )
 
