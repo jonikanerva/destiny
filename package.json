@@ -17,6 +17,7 @@
     "docker:build": "docker build -t docker.pkg.github.com/jonikanerva/dok8s/destiny:latest .",
     "docker:push": "docker push docker.pkg.github.com/jonikanerva/dok8s/destiny:latest",
     "deploy": "run-s build docker:build docker:push",
+    "generatetypes": "npx openapi-typescript https://raw.githubusercontent.com/Bungie-net/api/master/openapi.json --output src/bungie.ts",
     "process": "ts-node data/processManifest.ts"
   },
   "engines": {
